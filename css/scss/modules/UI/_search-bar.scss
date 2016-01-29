@@ -1,0 +1,39 @@
+.search-bar {
+	input[type="text"] {
+		border-radius: 0;
+		color: #222;
+		display: inline-block;
+		height: 36px; 
+		margin-bottom: 0;
+		vertical-align: middle; 
+		width: 80%;			
+	}
+	input[type="submit"],
+	input[type="submit"]%btn {
+		background: url("../images/UI/icon-search-dark.svg") no-repeat center #CCC;
+		background-size: 40%;
+		border-radius: 0;
+		color: inherit;
+	  display: inline-block;
+		font: {
+  		weight: normal;
+  		size: 16px;
+    }
+    line-height: 1.2;
+		height: 36px; 
+		padding: 0.5em 0.313em;
+		text-shadow: none;
+		vertical-align: middle;   
+		width: 20%;
+		@include hide-text;
+		&:hover,
+		&:focus {
+  		background-color: tint(black, 30%);
+  		box-shadow: none;
+		}	
+	}
+	// 667
+	@media (min-width: $break-ml-phone) {
+		max-width: 300px;
+	}
+}

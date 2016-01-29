@@ -1,0 +1,148 @@
+.site-footer {
+	padding-top: 2em;
+	padding-bottom: 2em;  
+	position: relative;
+	text-align: center;
+	width: 100%;
+	z-index: 1;
+	a {
+
+	}
+	.content-post li {
+    span {
+      display: inline-block;  
+      padding-left: 0.25em; 
+    }
+  }
+}
+
+// Footer Logo
+
+.footer-logo {
+  font-size: 2em;
+  margin: 0 auto 1em;
+  a {
+    display: block;      
+  }
+  img {
+     
+  } 
+}
+
+// Footer Nav
+
+.footer-nav {  		
+	margin-bottom: 1em;
+	vertical-align: top;
+	width: 100%;
+	a {
+  	display: inline-block;
+  	font: {
+    	size: 0.938em;
+    }
+  	padding-bottom: 0.5em;  
+    text-transform: uppercase;
+    -webkit-font-smoothing: antialiased; 
+	}
+	// 320
+	@media (min-width: $break-tiny-phone) {
+  	a {
+    	padding-right: 1em;
+    	padding-left: 1em;   
+    	width: 45%;   
+  	}
+	}
+	// 480
+	@media (min-width: $break-sm-phone) {
+  	a {
+    	width: 30%;   
+  	}
+	}
+	// 540
+	@media (min-width: $break-md-phone) {
+  	a {
+    	padding-bottom: 0;  
+    	width: 25%;
+    }  
+	}
+	// 667
+	@media (min-width: $break-ml-phone) {
+  	a {  
+    	width: auto;  
+  	}
+	}	
+}
+
+// Footer Contact Bar
+
+.footer-contact-bar {
+	display: inline-block;
+	width: 100%;
+}
+
+.footer-contact-links {
+  margin-bottom: 1em; 
+  a {
+    display: inline-block;
+    padding: 0 0 0.5em;
+    width: 48%; 
+    -webkit-font-smoothing: antialiased;
+    i {
+    	&:before {
+      	font-size: 99%; 
+    	}
+  	} 
+    // 540
+    @media (min-width: $break-md-phone) {
+      padding-right: 0.5em;
+      padding-left: 0.5em;
+      padding-bottom: 0;  
+      width: auto;       
+    }  
+  }
+}
+
+.footer-icons {
+  margin-bottom: 1em; 
+  [class^="icon-"]:before, 
+	[class*=" icon-"]:before {
+		font-size: 2em;	 
+ 	}		
+}
+
+.footer-copyright {
+  display: block; 
+  margin: 0 auto; 
+}
+
+// Site Copyrights
+
+.site-copyright {
+  padding-top: 1em;
+  width: 100%;  
+  p {
+    margin: 0 auto;  
+  }
+  // 768
+  @media (min-width: $break-lg-phone) {
+    text-align: center; 
+  }   
+}
+
+// Footer Login
+
+.footer-login {
+  font-size: 0.875em; 
+  padding-bottom: 1em;  
+  // 768
+  @media (min-width: $break-lg-phone) {
+    text-align: center; 
+  } 
+}
+
+// These footers are currently using classes to demo the style.
+// ".site-footer-contact, .site-footer-posts, .site-footer-basic"
+
+@import "../footer/contact-footer";
+@import "../footer/content-post-footer";
+@import "../footer/basic-footer";

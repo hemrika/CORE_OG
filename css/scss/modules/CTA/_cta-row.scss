@@ -1,0 +1,221 @@
+// displays media right (default)
+
+@mixin CTA-media-right {
+  .post-wrap {
+    flex-flow: row wrap;
+  }
+  .post-content {
+    padding-left: 0;  
+    padding-right: 5%; 
+  }
+}
+
+// displays media left
+
+@mixin CTA-media-left {
+  .post-wrap {
+    flex-flow: row-reverse wrap;
+  }
+  .post-content {
+    padding-right: 0;
+    padding-left: 5%;   
+  }
+}
+
+// This displays every even row's media flipped to the right
+
+@mixin CTA-row-flip-right {
+  @include CTA-media-left;  
+  &:nth-of-type(even) {         
+    .post-wrap{
+      flex-flow: row wrap;
+    }
+    .post-media {
+      align-self: flex-end; 
+    }
+    .post-content {  
+      padding-right: 5%; 
+      padding-left: 0;  
+    }
+  }
+}
+
+// This displays every even row's media flipped to the left
+
+@mixin CTA-row-flip-left {
+  @include CTA-media-right; 
+  &:nth-of-type(even) {         
+    .post-wrap{
+      flex-flow: row-reverse wrap;
+    }
+    .post-media {
+      align-self: flex-end;
+    }
+    .post-content {  
+      padding-right: 0; 
+      padding-left: 5%;  
+    }
+  }
+}
+
+// CTA Row
+
+.CTA-row {
+  .content-post-wrap {
+    max-width: 100%;
+    padding-right: 0;
+    padding-left: 0;     
+  }
+  .post-wrap {
+    flex-flow: column;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: {
+      top: 3%;
+      right: 1em; 
+      bottom: 3%;
+      left: 1em;  
+    }  
+    @include no-flexbox;      
+  }
+  .content-post {
+    display: block; 
+    padding: 0;
+    //text-align: center;    
+  }     
+  .post-media {
+    flex-flow: column-reverse;
+    margin-bottom: 0; 
+    figure { 
+      //max-width: 600px;  
+    }
+  }
+  .post-text {
+    padding-bottom: 1.5em;
+    padding-bottom: 1.5rem;   
+  }
+  .button-group {
+    align-items: flex-start;
+    justify-content: flex-start;
+    [class*="btn"] {
+       margin-right: 0.5em;
+       margin-left: 0;
+       &:last-child {
+         
+       }    
+    }
+  }
+  // 667
+  @media (min-width: $break-ml-phone) {
+    .post-media,
+    .post-content {
+      width: 100%; 
+    }
+    .post-content {
+      margin-bottom: 1em;
+      margin-bottom: 1rem;         
+      padding-left: 0;    
+    }
+    .button-group {
+    [class*="btn"] {
+      width: auto; 
+      }  
+    }
+  }
+  // 768
+  @media (min-width: $break-lg-phone) {    
+    .post-wrap {
+      //flex-flow: row wrap;
+      align-items: center;
+    }
+    .post-media,
+    .post-content {
+      width: 50%; 
+    }
+    .post-content {
+      margin-bottom: 0;
+      //padding-left: 0;  
+      //padding-right: 5%;
+    }
+    .post-text { 
+
+    }
+    .content-post {
+      flex-flow: row wrap; 
+      padding-bottom: 0;
+    }
+    .button-group {
+      [class*="btn"] {
+        
+      }
+    }
+    // Place media display options before breakpoint closing bracket
+    
+    @include CTA-media-right;
+    //@include CTA-media-left;
+    //@include CTA-row-flip-right;
+    //@include CTA-row-flip-left;
+  }
+  // 992
+  @media (min-width: $break-md-screen) {
+
+  }
+  // 1200
+  @media (min-width: $break-lg-screen) {
+    .post-title-icon {
+      max-width: 125px;
+    }
+    .post-text { 
+    }
+  }
+  // 1600
+  @media (min-width: $break-xl-screen) {   
+  }
+  // fallback
+  .no-flexbox & {
+    .post-media,
+    .post-content {
+      vertical-align: middle; 
+    }
+    .content-post {
+      &:nth-child(2) {
+        .post-media {
+          @include clearfix;
+        }
+      }  
+    } 
+    // 667
+    @media (min-width: $break-ml-phone) {
+      .content-post {
+        .post-content {
+          padding-right: 1.25em;  
+          padding-left: 0;  
+        }
+        &:nth-child(2) {
+          .post-media {
+            float: left; 
+          }
+          .post-content {
+            padding-right: 0;
+            padding-bottom: 0;    
+          }
+        }  
+      }   
+      .post-media,
+      .post-content {
+        vertical-align: middle; 
+        width: 48%; 
+      }
+    }
+    // 900
+    @media (min-width: $break-900) {
+      .content-post {
+        &:nth-child(2) {
+          .post-content {
+            padding-top: 2em;
+          }
+        }
+      } 
+    }
+  }
+}

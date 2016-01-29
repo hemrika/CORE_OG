@@ -1,0 +1,90 @@
+// Media Queries
+
+$break-tiny-phone: 320px;
+ 
+$break-sm-phone: 480px;
+
+$break-md-phone: 540px;
+
+$break-ml-phone: 667px;
+
+$break-lg-phone: 768px;
+
+$break-800: 800px;
+
+$break-900: 900px; 
+
+$break-md-screen: 992px;
+
+$break-lg-screen: 1200px; 
+
+$break-xl-screen: 1600px;
+
+$break-xxl-screen: 2000px;
+
+$break-widescreen: 2400px;
+
+// Global Colors
+
+$body-color: #333;
+
+$link: #72b4db;
+
+$link-highlight: lighten($link, 10%);
+
+// Font Stacks
+
+// default
+
+$sans-serif: 'Helvetica Neue', sans-serif;
+
+$serif: 'Cambria', Georgia, serif;
+
+// Sans
+
+$Montserrat: 'Montserrat';
+
+// Serif
+
+$Libre: 'Libre Baskrville', $serif;
+
+// Element Specific
+
+$global-font: $sans-serif;
+
+$header-font: $Montserrat;
+
+// Icons
+
+$font-icon: 'fontello', $sans-serif;
+
+// Social Media Icon Colors
+
+$twitter: #00aced;
+$facebook: #3b5998;
+$googleplus: #dd4b39;
+$pinterest: #cb2027;
+$linkedin: #007bb6;
+$youtube: #bb0000;
+$vimeo: #aad450;
+$tumblr: #32506d;
+$instagram: #517fa4;
+$flickr: #ff0084;
+$dribbble: #ea4c89;
+$quora: #a82400;
+$foursquare: #0072b1;
+$forrst: #5B9A68;
+$vk: #45668e;
+$wordpress: #21759b;
+$stumbleupon: #EB4823;
+$yahoo: #7B0099;
+$blogger: #fb8f3d;
+$soundcloud: #ff3a00;
+
+// Specific Helpers
+
+$wht-text-shadow: 0 1px 0 rgba(white, 0.35);
+
+$blk-text-shadow: 1px 1px 0 rgba(black, 0.15);
+
+$blk-text-shadow-neg: 0 -1px 1px rgba(black, 0.25);

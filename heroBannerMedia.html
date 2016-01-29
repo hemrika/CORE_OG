@@ -1,0 +1,9 @@
+<!-- HERO BANNER MEDIA -->{% if (AnchorName != "") {"<a name=\"" + AnchorName + "\"></a>"} #%} 
+<section class="hero-banner-media{% if (AddOnClass != "") {" " + AddOnClass} #%}" style="{% if (TitleColor != "") {"color:" + TitleColor + ";"} #%} {% if (BackgroundImage.Trim() != "") {"background-image: url('" + ResolveUrl(BackgroundImage) + "');"} #%} {% if (BackgroundColor.Trim() != "") {"background-color:" + BackgroundColor + ";"} #%}">
+  <style>.hero-banner-media:after {background-image: url("images/BG/hero-bg-server.jpg");}</style>
+  
+  <!-- Hero Content -->
+  <div class="hero-content">
+    □
+  </div>
+</section>

@@ -1,0 +1,400 @@
+@mixin content-banner {
+  padding-top: 3em;
+  padding-bottom: 3em;
+  text-align: center;
+  .button-group {
+    align-items: center;
+    justify-content: center;   
+  	[class*="btn"] {
+    	margin-top: 0.35em;
+    	margin-bottom: 0.35em;  
+      &:nth-last-child(n+2), 
+      &:nth-last-child(n+2) ~ * {
+        &:first-child {
+        	  
+      	}
+        &:last-child {
+        	  
+      	}
+      } 
+  	}
+  }
+}
+
+.content-banner {
+  @include content-banner;
+}
+
+// Banner Media
+
+.banner-media {
+  figure {
+    margin-bottom: 0; 
+  }
+}
+
+// Banner Title
+
+.banner-title {
+  line-height: 1; 
+}
+
+// Banner Subtitle
+
+.banner-subtitle {
+  
+}
+
+// Banner Text
+
+.banner-text {
+  @include p-style;
+  a {
+    text-decoration: none;  
+  }
+  ul {
+    padding-left: 0;  
+    text-align: center;  
+    li {
+      display: inline-block;  
+    }
+  }
+  // 992
+  @media (min-width: $break-md-screen) {
+    padding-right: 5%;
+    ul {
+      text-align: left;  
+      li {
+        display: flex;
+        justify-content: flex-start;
+      }
+    }  
+  }  
+}
+
+// Banner CTA
+ 
+.banner-cta {
+  display: inline-block;  
+}
+
+// Banner Themes
+
+.content-banner-light {
+  @include content-banner;   
+  // Light Colored Style  
+  background: #EEE;
+  [class*="btn"] {
+    color: #99dde7;
+    text-shadow: none;
+    &:hover,
+    &:focus {      
+      
+    }
+    &:active {
+      
+    }
+  }
+}
+  
+// Dark Colored Style 
+ 
+.content-banner-dark {
+  @include content-banner; 
+  background: #777;
+  color: white;
+  [class*="btn"] {
+    
+    &:hover,
+    &:focus {
+      
+    }
+    &:active {
+      
+    }
+  }
+}
+  
+// w/ Media Elements 
+ 
+.content-banner-media {
+  @include content-banner; 
+  .banner-content {
+    margin-bottom: 1.45em; 
+  }
+}
+
+// Media Left
+
+.content-banner-media-left {
+  @include content-banner;
+  .banner-content {
+    margin-bottom: 1.45em; 
+  } 
+}
+  
+// CTA - use inline SVG if possible
+  
+.content-banner-cta {
+  @include content-banner; 
+  .banner-content {
+    margin-bottom: 1.45em; 
+  }
+  .banner-cta {
+    height: 150px;  
+    margin-bottom: 1em;
+    width: 100%;   
+    img {
+      height: 100%; 
+      width: 100%;  
+    }
+  }
+}    
+
+
+// CTA Text - two col feature text
+  
+.content-banner-cta-text {
+  padding-top: 2em;
+  padding-bottom: 2em;
+  padding-top: 5vmax;
+  padding-bottom: 5vmax;  
+  // Banner Content
+  .banner-content {
+    padding-bottom: 0;  
+  }
+  // Banner Title
+  .banner-title {
+    padding-top: 0;   
+  }
+  // Banner Media
+  .banner-media {
+    text-align: left;
+  }
+  // Banner Text
+  .banner-text {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      &:first-child {
+        padding-top: 0;  
+      }
+    }
+    ul {
+      text-align: left;  
+      li {
+        justify-content: flex-start;
+      }
+    }
+  }
+  // Buttons 
+  .button-group {
+    justify-content: flex-start;  
+    .btn {
+      margin-left: 0; 
+    }
+  }
+  // 375
+  @media (min-width: 375px) {
+    .button-group {
+      [class*="btn"] {
+        margin-left: 0;
+      }        
+    } 
+  }
+} 
+  
+// ******* BREAKPOINTS ******* //
+
+// 540
+@media (min-width: $break-md-phone) {
+  
+  // Content Banner
+    
+  .content-banner {
+    
+  }  
+}
+
+// 667
+@media (min-width: $break-ml-phone) {
+  
+  // Content Banner CTA
+  
+  .content-banner-cta {
+    .banner-cta { 
+      margin-right: 1%; 
+      margin-bottom: 0; 
+    }
+    .banner-cta:nth-child(2) {
+      margin-right: 0;  
+    }
+    // layout Options
+    &.lg-left {
+      .banner-cta { 
+        width: 63%; 
+      }
+      .banner-cta:nth-child(2) {       
+        width: 35%; 
+      }
+    }
+    // layout Options
+    &.lg-right {
+      .banner-cta {          
+        width: 35%;
+      }
+      .banner-cta:nth-child(2) {      
+        width: 63%; 
+      }
+    }
+  }
+}
+
+// 900
+@media (min-width: $break-900) {
+  .content-banner {
+    padding-top: 5%;
+    padding-bottom: 5%; 
+    text-align: left;
+    .button-group {   
+    	[class*="btn"] {
+      	padding: 1em 1.75em; 
+        &:nth-last-child(n+2), 
+        &:nth-last-child(n+2) ~ * {
+          &:first-child {
+          	  
+        	}
+          &:last-child {
+          	  
+        	}
+        } 
+    	}
+    }
+  }
+  .banner-content,
+  .banner-media {
+    display: inline-block;
+    vertical-align: middle; 
+  }
+  .banner-content {
+    padding-right: 5%;  
+    width: 67%;
+    text-align: left; 
+  }
+  .banner-media {
+    text-align: center; 
+    width: 32%; 
+  }
+  .banner-title {
+     
+  }
+  .banner-text {
+    margin: 0;  
+  }
+  
+  // Content Banner CTA Text
+  
+  .content-banner-cta-text {
+    .banner-content {
+      padding-right: 5%;     
+      width: 48%;
+    }
+    .banner-media {
+      width: 50%;
+      [class*="btn"] {
+        padding: 0.5em 1.5em;   
+      } 
+    }
+    .banner-title {
+       
+    }
+    .button-group {
+      padding-top: 1em;  
+    }    
+  }
+  
+  // Content Banner Media
+  
+  .content-banner-media {
+    .banner-content {
+      margin-bottom: 0; 
+      padding-right: 5%;  
+      width: 60%; 
+    }
+    .banner-title {
+       
+    }
+    .banner-text {
+      margin-bottom: 1em;  
+    }
+    .banner-media {
+      text-align: right;  
+      width: 39%; 
+    }
+    .button-group {
+      justify-content: flex-start;
+    }
+  }
+  
+  // Content Banner Media Left
+  
+  .content-banner-media-left {
+    .container {
+      display: flex;
+      align-items: center;
+      flex-flow: row-reverse wrap;
+    }
+    .banner-content {
+      padding-right: 0; 
+      padding-left: 5%; 
+    }
+    .button-group {
+      justify-content: flex-start;
+    }
+  }
+  
+  // Fallbacks
+  
+  .no-flexbox {
+   .content-banner-media-left {
+      .container {
+        display: inline-block;  
+      }
+      .banner-content {
+        padding-right: 5%;
+        padding-left: 0;  
+      }   
+    }
+  }
+}
+
+// 1600
+@media (min-width: $break-xl-screen) {
+  .content-banner {
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+  .content-banner-media {
+    .banner-media {
+      flex: 1 0 auto;
+      .button-group {
+        justify-content: space-between;
+      }
+      [class*="btn"] {
+        font: {
+          size: 1.135em;
+          size: 1.135rem;
+        }
+        flex: 1 0 auto;
+        margin-right: 0;
+        margin-left: 0.5em;   
+      }
+    }
+  }
+}

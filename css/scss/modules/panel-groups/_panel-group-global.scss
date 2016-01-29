@@ -1,0 +1,30 @@
+.panel-group {
+  // 667
+  @media (min-width: $break-ml-phone) {
+    & > .container {
+      display: flex;
+      flex-flow: row wrap;
+    }
+  }
+}
+
+.panel-item {
+  flex: 1;
+  &:before {
+    content: '300 450 540 700 900';
+    display: none;  
+  }
+ // 667
+ @media (min-width: $break-ml-phone) {
+   flex: 1 0 50%;
+ }
+ // 1200
+ @media (min-width: $break-lg-screen) {
+   flex: 1;
+ } 
+}
+
+
+[data-minwidth~="300"] {
+
+}

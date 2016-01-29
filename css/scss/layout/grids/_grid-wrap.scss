@@ -1,0 +1,216 @@
+// Grid Wrap
+
+.grid-wrap {
+  @include clearfix;
+  margin: 0 auto;
+  width: 100%;
+  .flexbox & {
+    display: flex;
+  }
+  // 667
+  @media (min-width: $break-ml-phone) {
+    
+  }
+  &.demo {
+    .flexbox & {
+      flex-flow: row wrap;
+      .col {
+        flex-grow: 0;
+        figure {
+          margin-bottom: 0; 
+        }
+        // 667
+        @media (min-width: $break-ml-phone) {
+          //flex: 1 0 50%; 
+        }
+      }
+    }
+  }
+}
+
+// Grid Column
+
+.col {
+  display: inline-block;
+  padding: {
+    bottom: .75em;
+  }   
+  vertical-align: top;
+  width: 100%;  
+  &:last-child {
+    margin-bottom: 0; 
+  }
+  // Sidebar
+  &.aside {
+    & > .col-item {
+      display: block; 
+    }
+    font-size: .875em; 
+    width: 100%;  
+  }
+  .flexbox & {
+    flex-grow: 1;
+    float: none;
+    width: auto; 
+  }
+  // 480
+  @media (min-width: 375px) {
+    margin-bottom: 0;
+    padding: {
+      top: .35em;
+      right: .35em;
+      bottom: .35em; 
+      left: .35em;
+    }
+    .flexbox & {
+      flex-grow: 1;
+      float: none;
+      width: 49%;  
+    }     
+  }
+  // 667
+  @media (min-width: $break-ml-phone) {
+/*
+    padding: {
+      top: .5em;
+      right: .5em;
+      bottom: .5em; 
+      left: .5em;
+    }
+*/ 
+    .flexbox & {
+      width: 33%; 
+    }
+  }
+}
+
+// Title margin fix
+
+.col,
+.col-item {
+  .title {
+    margin-bottom: 5px; 
+  }
+}
+
+// Column Items
+
+.col-item {
+  display: inline-block;
+  flex: 1;
+  width: auto;   
+}
+
+.col-title {
+  font: {
+    size: 1em;
+    weight: bold;
+  }
+  text-transform: none;   
+}
+
+// two col layout
+@mixin even-cols {
+  // 667
+  @media (min-width: $break-ml-phone) {
+    & > .col {
+      width: 48%;
+      &:first-child {
+        padding-right: .75em; 
+      }
+      &:last-child {
+        padding-left: .75em; 
+      }  
+    }
+    .flexbox & {
+      & > .col {
+        width: 50%;  
+      }
+    }
+  }  
+}
+
+// two col layout - "main" on the LEFT side
+@mixin two-col-main-left {
+  // 667
+  @media (min-width: $break-ml-phone) {
+    & > .col { 
+      &:first-child {
+        float: left;
+        padding-right: 3%;
+        padding-left: 0;    
+        width: 65%; 
+      }
+      &:last-child {
+        float: right;
+        padding-right: 0; 
+        width: 35%;  
+      }
+    }
+    .flexbox & {
+      & > .col {  
+        &:first-child {  
+          flex: 2;
+        }
+        &:last-child {
+           
+        }  
+      }
+    }
+  }  
+}
+
+// two col layout - "main" on the RIGHT side
+@mixin two-col-main-right {
+  // 667
+  @media (min-width: $break-ml-phone) {
+    & > .col { 
+      &:first-child {
+        float: right;
+        padding-right: 0; 
+        padding-left: 3%;   
+        width: 65%; 
+      }
+      &:last-child {
+        float: left;
+        padding-left: 0;  
+        width: 35%;  
+      }
+    }
+    .flexbox & {
+      flex-flow: row-reverse wrap;
+      & > .col {    
+        &:first-child {
+          flex: 2; 
+        }
+        &:last-child {
+           
+        }  
+      }
+    }
+  }  
+}
+
+// Text Columns
+
+// 667
+@media (min-width: $break-ml-phone) {
+  .text-col-group {
+    .flexbox & {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;      
+    }
+  }
+  .text-col {
+    display: inline-block;  
+    width: 48%;
+    &:first-child {
+      padding-right: .75em;  
+    }
+    &:last-child {
+      padding-left: .75em; 
+    } 
+  }
+}
+

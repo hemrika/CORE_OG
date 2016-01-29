@@ -1,0 +1,419 @@
+<!doctype html>
+<!--[if IE 8]><html class="no-js ie9 ie8" lang="en"><![endif]-->
+<!--[if IE 9]><html class="no-js ie9" lang="en"><![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-js" lang="en">
+	<!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>CORE :: Modal Samples</title>
+    <meta name="description" content="Site description goes here.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="App_Themes/ThemeName/images/touch-icons/favicon-144.png">
+    <!--[if IEMobile]><meta http-equiv="cleartype" content="on" /><![endif]-->
+    <link rel="apple-touch-icon" href="App_Themes/ThemeName/images/touch-icons/favicon-152.png">   		
+    <!-- Core CSS -->   		
+    <link href="http://cdn.kyamedia.com/css/core.css" rel="stylesheet">
+    <!-- Theme CSS -->   		
+    <link href="App_Themes/ThemeName/theme.css" rel="stylesheet">
+  	<!-- Modernizr -->
+  	<script src="http://cdn.kyamedia.com/js/modernizr.js"></script>  	
+  </head>
+  <body>
+	  <form>
+  	  <!--[if lt IE 10]>
+      <p class="update-browser">This browser version is not recommended. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+		<![endif]-->
+		<div class="site-wrap">				    
+		  <!-- *** Demo Container *** -->
+		  <main class="site-content">
+  		  <!-- *** Demo Styles *** -->
+  		  <style>
+    		  .modal-demo {
+      		  display: flex;
+      		  flex-flow: row wrap;
+    		  }
+    		  .modal-sample {
+      		  padding: 0.25em;
+    		  }
+  		  </style>
+  		  <!-- *** Demo Info - Collapsible List *** -->
+        <div class="collapsible-list demo-collapse" role="tablist" aria-multiselectable="true">
+          <!-- Panel -->
+          <div class="panel">
+            <div class="panel-heading" role="tab" id="heading-one">
+              <h4 class="title">
+                <a role="button" data-toggle="collapse" href="#collapse-one" aria-expanded="true" aria-controls="collapse-one" class="collapsed">
+                <span class="title-txt"><span class="pre inline">Modals</span></span>
+                <div class="panel-close">
+                <svg class="icon-info" baseProfile="basic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M0 0v32h32v-32h-32zm19.712 23.616c-1.664 1.568-2.848 2.56-3.648 3.008-.832.48-1.536.704-2.112.704-.576 0-1.024-.192-1.376-.544-.352-.384-.512-.864-.512-1.472 0-1.568.864-5.152 2.688-11.04.032-.128.064-.224.064-.32l-.256.128c-.16.096-.608.448-1.92 1.76-.128.096-.256.16-.384.16s-.256-.032-.352-.128l-.768-.608c-.128-.096-.224-.224-.224-.384 0-.128.032-.288.128-.416 1.248-1.344 2.368-2.304 3.392-2.88 1.088-.608 1.984-.896 2.784-.896.512 0 .896.128 1.216.352.32.288.512.672.512 1.12 0 .288-.16 1.056-1.184 4.544-1.504 5.024-1.856 6.816-1.856 7.424.288-.192.928-.64 2.368-1.984.128-.096.256-.16.384-.16s.288.064.384.16l.704.672c.096.096.16.256.16.416 0 .128-.064.288-.192.384zm.672-15.392c-.48.512-1.024.768-1.632.768-.512 0-.96-.192-1.28-.544-.352-.352-.512-.8-.512-1.344 0-.672.224-1.248.64-1.728.448-.512 1.024-.736 1.632-.736.512 0 .96.16 1.312.512.352.352.512.8.512 1.312 0 .672-.224 1.248-.672 1.76z" /></svg>
+                <svg class="icon-close" baseProfile="basic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M16 0c-8.864 0-16 7.136-16 16 0 8.832 7.136 16 16 16 8.832 0 16-7.168 16-16 0-8.864-7.168-16-16-16zm5.632 17.504h-4.128v4.128c0 .832-.672 1.504-1.504 1.504-.864 0-1.536-.672-1.536-1.504v-4.128h-4.128c-.832 0-1.504-.672-1.504-1.504 0-.864.672-1.536 1.504-1.536h4.128v-4.128c0-.832.672-1.504 1.536-1.504.832 0 1.504.672 1.504 1.504v4.128h4.128c.832 0 1.504.672 1.504 1.536 0 .832-.672 1.504-1.504 1.504z"/></svg></div>
+                </a>
+              </h4>
+            </div>
+            <div id="collapse-one" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-one">
+              <!-- Panel Body -->
+              <div class="panel-body">
+                <p>Our modal functionality is powered by <a href="https://github.com/VodkaBears/Remodal#remodal" target="_blank">remodal.js</a>, the:<blockquote>"Responsive, lightweight, fast, synchronized with CSS animations, fully customizable modal window plugin with declarative configuration and hash tracking".</blockquote></p>
+               <p>A modal is initiated by <a href="#modal-one">linking</a> to the specified modal's unique ID. You can place multiple content types inside a modal and can initiate them with <a href="#modal-one">multiple links</a> if desired. In this case we are calling #modal-one.</p>
+               <p>You can also have multiple modals on one page as show in the examples demo below.</p>
+               <p>Each modal <strong>MUST</strong> have a unique ID to display the related content and function independently from each-other. Use cases include: <strong><em>media</em> or <em>content details, contact forms, login/signup/user prompts</em></strong>.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+                
+         <!-- *** Modal Sample Demo *** -->
+	       <div class="modal-demo container">
+  	         	       
+  	       <!-- *** WEB PART CODE STARTS HERE *** -->  	       
+  	       
+  	       
+  	       <!-- Modal w/ Plain HTML -->
+  	       <div class="modal-sample">
+    	       
+    	       <!-- Modal Button -->
+    	       <a class="btn" href="#modal-one">Plain HTML</a>
+    	        	       
+    	       <!-- Modal One -->
+    	       <div class="remodal" data-remodal-id="modal-one" role="dialog" aria-labelledby="modal-one-title" aria-describedby="modal-one-desc">
+      	       <!-- Close Button -->
+              <button data-remodal-action="close" class="remodal-close" aria-label="Close"></button>
+              <!-- Modal Content -->
+              <div class="modal-content">                  
+                <!-- Title -->
+                <h2 id="modal-one-title">Heading h2</h2>
+                <h3>Heading h3</h3>
+                <h4>Heading h4</h4>  		                    
+                <!-- Description -->
+                <div id="modal-one-desc" class="post-text">
+                    Mollitia quas officiis neque odio dolore fugiat cupiditate reprehenderit ad inventore tenetur voluptas! Reprehenderit, modi, at, enim expedita officia assumenda nam nulla explicabo quos eius recusandae aliquam.
+                  <ul>                        
+                    <li>This is a Post List Item that does not link.</li>
+                    <li><a href="#">Maybe you want to make this Post List Item clickable?</a></li>
+                  </ul>
+                </div>                
+              </div>
+              <!-- Modal Buttons -->
+              <div class="modal-buttons">
+                <button data-remodal-action="cancel" class="btn-cancel">Cancel</button>
+                <button data-remodal-action="confirm" class="btn-primary">OK</button>
+              </div>
+            </div> 
+    	       
+    	     <!-- END --> 	       
+  	       </div>
+  	       
+  	       <!-- Modal w/ Content Post -->
+  	       <div class="modal-sample">
+    	       
+    	       <!-- Modal Button -->
+    	       <a class="btn" href="#modal-two">Content Post</a>
+    	        	       
+    	       <!-- Modal Two -->
+    	       <div class="remodal" data-remodal-id="modal-two" role="dialog" aria-labelledby="modal-two-title" aria-describedby="modal-two-desc">
+      	       <!-- Close Button -->
+              <button data-remodal-action="close" class="remodal-close" aria-label="Close"></button>
+              <!-- Modal Content -->
+              <div class="modal-content">
+                <!-- Content Post -->
+                <article class="cq content-post">
+                  <div class="post-wrap">
+                    <!-- Post Content -->
+                    <div class="post-content">
+                      <!-- Post Title -->
+                      <h2 id="modal-two-title" class="post-title">Content Post Title</h2>
+                      <!-- Post Subtitle -->
+                      <p id="modal-two-desc" class="post-subtitle">This is a Subtitle</p>
+                      <!-- Post Text -->
+                      <div class="post-text">
+                        Voluptates veritatis tempore odit id. Aspernatur, mollitia, asperiores, voluptates, odit sunt ipsam voluptatibus dolorem quis culpa sed dignissimos doloribus saepe incidunt iure tempora blanditiis.
+                        
+                        <h3>Content Post Sub Header</h3>
+                        <!-- Post List -->
+                        <ul>                        
+                          <li>This is a Post List Item that does not link.</li>
+                          <li><a href="#">Maybe you want to make this Post List Item clickable?</a></li>
+                          <li><a href="#">An example of a Post List Item with really, really long text.</a></li>
+                          <li><a href="#">More post information goes here.</a></li>
+                          <li><a href="#">This is another list item link.</a></li>
+                          <li><a href="#">Another example of Post List text.</a></li>
+                        </ul>
+                      </div>
+                      <!-- Post Link -->
+                      <a class="btn-primary" href="#">Post Link</a>
+                    </div>
+                    <!-- Post Media -->
+                    <div class="post-media">
+                      <!-- Image -->
+                      <figure>
+                        <a href="#">
+                          <img data-src="http://placehold.it/1200x675/debffb?text=1200x675" alt="">
+                        </a>
+                        <noscript>
+                          <a href="#">
+                            <img src="http://placehold.it/1200x675/debffb?text=1200x675" alt="">
+                          </a>
+                        </noscript>
+                        <!-- Image Caption-->		         
+                        <a href="#">
+                          <figcaption>
+                            <p class="image-caption">Default Caption</p>
+                          </figcaption>
+                        </a>
+                      </figure>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+    	       
+  	       <!-- END -->
+  	       </div>
+  	       
+  	       <!-- Modal w/ Contact Form -->
+  	       <div class="modal-sample">
+    	       
+    	       <!-- Modal Button -->
+    	       <a class="btn" href="#modal-three">Contact Form</a>
+    	        	       
+    	       <!-- Modal Three -->
+    	       <div class="remodal" data-remodal-id="modal-three" role="dialog" aria-labelledby="modal-three-title" aria-describedby="modal-three-desc">
+      	       <!-- Close Button -->
+              <button data-remodal-action="close" class="remodal-close" aria-label="Close"></button>
+              <!-- Modal Content -->
+              <div class="modal-content">
+                <!-- Contact Form -->
+                <div class="qc-form">
+                  <!-- Form Headline -->
+                  <h4 id="modal-three-title" class="form-headline">This is the "form-headline". Use this as a way to draw attention to the form.</h4>
+                  <div id="">
+                    <div id="">
+                    </div>
+                    <div id="" class="FormPanel">
+                      <table class="EditingFormTable">
+                        <tbody>
+                          <tr id="">
+                            <td class="FieldLabel"><label id="" class="EditingFormLabel" for="">Name:</label></td>
+                            <td class="EditingFormValueCell">
+                              <div id="" class="EditingFormControlNestedControl editing-form-control-nested-control">
+                                <input name="" type="text" maxlength="200" id="" class="form-control">
+                              </div>
+                            </td>
+                          </tr>
+                          <tr id="">
+                            <td class="FieldLabel"><label id="" class="EditingFormLabel" for="">Email:</label></td>
+                            <td class="EditingFormValueCell">
+                              <div id="" class="EditingFormControlNestedControl editing-form-control-nested-control">
+                                <input name="" type="text" maxlength="200" id="" class="form-control">
+                              </div>
+                            </td>
+                          </tr>
+                          <tr id="">
+                            <td class="FieldLabel"><label id="" class="EditingFormLabel" for="">Company:</label></td>
+                            <td class="EditingFormValueCell">
+                              <div id="" class="EditingFormControlNestedControl editing-form-control-nested-control">
+                                <input name="" type="text" maxlength="200" id="" class="form-control">
+                              </div>
+                            </td>
+                          </tr>
+                          <tr id="">
+                            <td class="FieldLabel"><label id="" class="EditingFormLabel" for="">Phone:</label></td>
+                            <td class="EditingFormValueCell">
+                              <div id="" class="EditingFormControlNestedControl editing-form-control-nested-control">
+                                <input name="" type="text" maxlength="200" id="" class="form-control">
+                              </div>
+                            </td>
+                          </tr>
+                          <tr id="">
+                            <td class="FieldLabel"><label id="" class="EditingFormLabel" for="">Message:</label></td>
+                            <td class="EditingFormValueCell">
+                              <div id="" class="EditingFormControlNestedControl editing-form-control-nested-control">
+                                <textarea name="" rows="2" cols="20" id="" class="form-control"></textarea>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="EditingFormButtonLeftCell"></td>
+                            <td class="EditingFormButtonCell"><input type="submit" name="" value="Submit" id="" class="FormButton btn btn-primary"></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+    	     
+    	     <!-- END -->  	       
+  	       </div>
+  	       
+  	       <!-- Modal w/ User Prompt -->
+  	       <div class="modal-sample">
+    	       
+    	       <!-- Modal Button -->
+    	       <a class="btn" href="#modal-four">User Prompt</a>
+    	       	       
+    	       <!-- Modal Four -->
+    	       <div class="remodal" data-remodal-id="modal-four" role="dialog" aria-labelledby="modal-four-title" aria-describedby="modal-four-desc">
+      	       <!-- Close Button -->
+              <button data-remodal-action="close" class="remodal-close" aria-label="Close"></button>
+              <!-- Modal Content -->
+              <div class="modal-content">
+                <!-- *** This is where vital info goes *** -->
+                
+                <!-- Title -->
+                <h2 id="modal-four-title">Important!</h2>
+                <h3>Vital Information Below</h3>  		                    
+                <!-- Description -->
+                <div id="modal-four-desc" class="post-text">
+                  Use this as a way to get the user's attention. This can possibly be a way to determine a user action or a way to make the user read something important.
+                </div>
+                
+              </div>
+              <!-- Modal Buttons -->
+              <div class="modal-buttons">
+                <button data-remodal-action="cancel" class="btn-cancel">Go Back</button>
+                <button data-remodal-action="confirm" class="btn-primary">Continue</button>
+              </div>
+            </div>
+    	       
+    	     <!-- END -->  	       
+  	       </div>
+  	       
+  	       <!-- Modal w/ User Sign Up -->
+  	       <div class="modal-sample">
+    	       
+    	       <!-- Modal Button -->
+    	       <a class="btn" href="#modal-five">Signup</a>
+    	       	       
+    	       <!-- Modal Five -->
+    	       <div class="remodal" data-remodal-id="modal-five" role="dialog" aria-labelledby="modal-five-title" aria-describedby="modal-five-desc">
+      	       <!-- Close Button -->
+              <button data-remodal-action="close" class="remodal-close" aria-label="Close"></button>
+              <!-- Modal Content -->
+              <div class="modal-content">
+                <!-- Sign Up Form -->
+                <div class="qc-form">
+                  <!-- Form Headline -->
+                  <h4 class="form-headline">Sign Up With Us!</h4>
+                  <div id="">
+                    <div id="">
+                    </div>
+                    <div id="" class="FormPanel">
+                      <table class="EditingFormTable">
+                        <tbody>
+                          <tr id="">
+                            <td class="FieldLabel"><label id="" class="EditingFormLabel" for="">Name:</label></td>
+                            <td class="EditingFormValueCell">
+                              <div id="" class="EditingFormControlNestedControl editing-form-control-nested-control">
+                                <input name="" type="text" maxlength="200" id="" class="form-control">
+                              </div>
+                            </td>
+                          </tr>
+                          <tr id="">
+                            <td class="FieldLabel"><label id="" class="EditingFormLabel" for="">Email:</label></td>
+                            <td class="EditingFormValueCell">
+                              <div id="" class="EditingFormControlNestedControl editing-form-control-nested-control">
+                                <input name="" type="text" maxlength="200" id="" class="form-control">
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="EditingFormButtonLeftCell"></td>
+                            <td class="EditingFormButtonCell"><input type="submit" name="" value="Sign Up" id="" class="FormButton btn btn-primary"></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+    	     
+    	     <!-- END -->   	       
+  	       </div>
+  	       
+  	       <!-- Modal w/ Media Detail -->
+  	       <div class="modal-sample">
+    	       
+    	       <!-- Modal Button -->
+    	       <a class="btn" href="#modal-six">Media Detail</a>
+    	        	       
+    	       <!-- Modal Six -->
+    	       <div class="remodal" data-remodal-id="modal-six" role="dialog" aria-labelledby="modal-six-title" aria-describedby="modal-six-desc">
+      	       <!-- Close Button -->
+              <button data-remodal-action="close" class="remodal-close" aria-label="Close"></button>
+              <!-- Modal Content -->
+              <div class="modal-content">                  
+                <!-- Image -->
+                <figure>
+                  <img src="http://placehold.it/2000x1125/a6e0ad?text=2000x1125" alt="Responsive Feature Post">
+                </figure>
+                <!-- Video -->
+                <div class="media-wrap">
+                  <iframe width="100%" data-src="https://www.youtube.com/embed/ElAJbhkH2lU?rel=0" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <!-- Title -->
+                <h2 id="modal-six-title">Media Detail</h2>		                    
+                <!-- Description -->
+                <div id="modal-six-desc" class="post-text">
+                     Option to display image or video player with title and description. The buttons below are optional and can be used as needed.
+                </div>
+              </div>
+              <!-- Modal Buttons -->
+              <div class="modal-buttons">
+                <button data-remodal-action="cancel" class="btn-cancel">Close</button>
+                <button data-remodal-action="confirm" class="btn-primary">Share</button>
+              </div>
+            </div>
+    	     
+    	     <!-- END -->  	       
+  	       </div>
+  	       
+  	       <!-- Modal w/ iDontate iframe -->
+  	       <div class="modal-sample">
+    	       
+    	       <!-- Modal Button -->
+    	       <a class="btn" href="#modal-seven">iDonate</a>
+    	        	       
+    	       <!-- Modal Seven -->
+    	       <div class="remodal" data-remodal-id="modal-seven" role="dialog" aria-labelledby="modal-seven-title" aria-describedby="modal-seven-desc">
+      	       <!-- Close Button -->
+              <button data-remodal-action="close" class="remodal-close" aria-label="Close"></button>
+              <!-- Modal Content -->
+              <div class="modal-content">                  
+                
+                <!-- Title -->
+                <h2 id="modal-seven-title">iDonate</h2>		                    
+                <!-- Description -->
+                <div id="modal-seven-desc" class="post-text">
+                     Option to display giving functionality.
+                </div>
+                <div data-idonate-embed='d99b4faf-eef0-4def-8ab7-563f246579a3'></div>
+<script src='https://v2-idonate-embed-staging.herokuapp.com/idonate.js'></script>
+              </div>
+            </div>
+    	     
+    	     <!-- END -->  	       
+  	       </div>       
+  	       
+           
+         <!-- *** END MODAL DEMO *** -->  
+	       </div>
+								
+        <!-- *** END *** -->			 	            
+		  </main>	  	  		    	  		  
+    </div>
+    <!-- Dependencies -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="http://cdn.kyamedia.com/js/libs/jquery.2.1.4.min.js"><\/script>')</script>
+    <!-- Core Scripts -->
+    <script src="http://cdn.kyamedia.com/js/min/core.min.js"></script>
+    <!-- Theme Scripts -->
+		<script src="CMSScripts/Custom/ThemeName/theme.min.js"></script>
+	  </form>
+  </body>
+</html>

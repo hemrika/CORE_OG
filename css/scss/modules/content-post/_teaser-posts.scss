@@ -1,0 +1,97 @@
+.teaser-posts {
+  padding-top: 2em;
+  padding-bottom: 2em;  
+  .module-description {
+    margin-bottom: 2.5em;  
+    text-align: center; 
+  }
+  .content-post {
+    text-align: center;    
+  }
+  .post-wrap {
+    @include clearfix;
+    display: table;
+    vertical-align: top;      
+  }
+  .post-content {
+    display: table-footer-group;  
+    vertical-align: top;
+  }
+  .post-title {
+    font-size: 1.5em; 
+  }
+  .post-text {
+    line-height: 1.3; 
+  }
+  .post-media {
+    figure {
+    }  
+    img {
+      max-width: 8em; 
+    }
+  }
+  [class*="btn"] {
+    font-size: 0.8em;
+    width: auto;   
+  }  
+}
+
+// 320
+@media (min-width: $break-tiny-phone) {
+  .teaser-posts {
+    .content-post {
+      text-align: left;
+    }
+    .post-wrap {
+      display: inline-block;  
+    }
+    .post-content {
+      display: inline-block;   
+      padding-left: 5%;
+      text-align: left;   
+      width: 74%; 
+    }
+    .post-media {
+      float: left;  
+      padding-top: 0.25em;     
+      width: 25%; 
+    }
+  }
+}
+
+// 667
+@media (min-width: $break-ml-phone) {
+  .teaser-posts {
+    .content-post {
+      padding-top: 0;       
+      padding-right: 3%;
+      padding-left: 3%;
+      padding-bottom: 3em;  
+      vertical-align: top;       
+      width: 49%;
+    }
+    .post-title {
+      font-size: 1.25em; 
+    }
+  }
+}
+
+// 768
+@media (min-width: $break-lg-phone) {
+  .teaser-posts {
+    .content-post {
+      padding-top: 0;       
+      padding-right: 2%;
+      padding-left: 2%;
+      padding-bottom: 3em;  
+      vertical-align: top;       
+      width: 32%;
+    }
+    .post-content {
+      padding-left: 7%; 
+    }
+    .post-title {
+      font-size: 1.25em; 
+    }
+  }
+}

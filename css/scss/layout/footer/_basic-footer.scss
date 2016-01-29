@@ -1,0 +1,40 @@
+.site-footer-basic {
+  background-color: #EEE;
+	padding-top: 2em;
+	padding-bottom: 2em;  
+	position: relative;
+	text-align: center;
+	width: 100%;
+	z-index: 1;
+	a {
+
+  }
+	.content-post li {
+    span {
+      display: inline-block;  
+      padding-left: 0.25em; 
+    }
+  }     
+  .footer-info {
+    order: 1;
+    .post-media {
+      padding-top: 0; 
+    }
+  }
+  .soc-media-links {
+    order: 3;
+    display: inline-block;
+    text-align: left;    
+    width: 100%;  
+    p {
+      padding-right: 0.5em; 
+    }          
+  }
+  // 768
+  @media (min-width: $break-lg-phone) {
+    .soc-media-links {
+      text-align: right;
+      width: 20%; 
+    }
+  }
+}

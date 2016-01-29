@@ -1,0 +1,37 @@
+.full-width-slider {
+  padding-top: 2em;
+  padding-bottom: 2em;
+  .container { 
+    max-width: 100%;
+    padding-right: 0;
+    padding-left: 0;    
+  }
+  .hero-banner {
+    display: flex;
+    align-items: center;
+    height: 100%; 
+    padding-top: 5em;
+    padding-bottom: 5em;
+  }
+  .gallery {
+       
+  }   	
+	.gallery-cell { 
+	  width: 100%;
+	  margin-right: 0;
+	  //background: #8C8;
+	  //counter-increment: gallery-cell;
+	}
+	// cell number
+	.gallery-cell:before {
+	  display: block;
+	  text-align: center;
+	  //content: counter(gallery-cell);
+	  //line-height: 200px;
+	  font-size: 80px;
+	  color: white;
+	}
+	.flickity-page-dots {
+		bottom: -3em;	
+	}
+}

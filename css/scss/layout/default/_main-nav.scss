@@ -1,0 +1,566 @@
+.main-nav {
+	padding-top: 1em;
+	padding-bottom: 1em;     
+	position: relative;
+	z-index: 2;
+	.container,
+	nav {
+  	display: inline-block;  
+		position: relative;     
+  }
+  .no-flexbox & {
+    .container {
+      @include clearfix;
+    }
+    .site-logo {
+      display: inline-block;  
+    }
+    .nav-toggle {
+      float: right; 
+    }
+    // 800
+    @media (min-width: $break-800) {
+      .site-logo {
+        width: 24%; 
+      }
+    }
+  }  
+}
+
+// Site Logo
+
+.site-logo {
+  display: inline-block;  
+  font-size: 2em;    
+  margin: { 
+    right: auto;
+    bottom: 0.5em;
+    left: auto; 
+  }  
+  text-align: center;    
+	width: 100%;
+	a {
+  	width: 100%;  
+	}
+	img {
+  	
+  } 
+	.no-flexbox & {
+  	display: inline-block; 
+	}
+}
+
+// Multi Level Nav
+
+// < 800
+@media (max-width: $break-800) {
+  .js-nav .nav-collapse.multiple-level-nav.opened.dropdown-active {
+    max-height: 9999px !important;
+  }
+
+  .js-nav .nav-collapse.multiple-level-nav .sub-menu {
+    clip: rect(0 0 0 0);
+    max-height: 0;
+    position: absolute;
+    display: none; /* This way you don't have focus on sub menu items unless you open the sub menu. */
+    overflow: hidden;
+    zoom: 1;
+    li {
+      line-height: normal;
+    }
+  }
+
+  .js-nav .nav-collapse.multiple-level-nav .sub-menu.toggled {
+    display: block;  
+    max-height: 5000px;
+    position: relative;
+    opacity: 1;
+    z-index: 2;
+    transition: max-height 0.4s ease; 
+  }
+  
+  .dropdown-toggle {
+    content: "";
+    font-family: $font-icon;
+    height: 48px;
+    width: 48px;
+    padding: 0;
+    position: absolute;
+    margin: 0;
+    text-transform: lowercase;
+    transition: background 0.4s ease;
+    top: 0;
+    right: 0;
+    z-index: 1002;
+    &:hover,
+    &:focus,
+    &:active {
+      
+    }  
+    &:after {
+      content: "+";
+      content: '\e805';    
+      font-size: 20px;
+      line-height: 1.2; 
+    }
+    &.toggled  {
+      
+      &:after {
+        content: "-";
+        content: '\e804';
+        // ** theme ** // color: darkRed;
+        font-size: 20px;
+        line-height: 1.2; 
+      }
+    }
+  }
+// END
+}  
+
+// Site Nav
+
+.nav-collapse {    
+   //align-self: center; 
+   max-height: 0;
+   overflow: hidden;    
+	 //flex: 1 0 100%;
+	 list-style: none;  
+	 width: 100%; 	
+	 & > ul {
+    list-style: none;
+    padding-top: 1em; 
+    width: 100%;
+   }
+   li {  
+  	margin-bottom: 2px; 
+	  width: 100%;
+	  position: relative;
+	  z-index: 1002;		
+	  & > a {  	  
+		  display: inline-block;  
+		  font-size: 0.875em;
+		  padding: 0.85em 0.5em 0.85em 0.7em;
+		  position: relative; 
+		  height: 48px;
+		  line-height: 24px;  	
+		  width: 100%;
+		  text-decoration: none;
+		  transition: background 0.4s ease, 
+		              color 0.4s ease, 
+		              padding 0.4s ease;
+		  z-index: 1001; 
+		}
+		i:before {
+  		line-height: 0.8; 
+		}
+		&:last-child {
+  		margin-bottom: 0; 
+		}
+  }
+  li.dropdown {
+		z-index: 1001; 
+	}
+	// Submenu
+  .sub-menu {
+    padding-top: 0; 
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 0.4s ease,
+                max-height 0.4s ease;
+    & > li {
+  	  margin-bottom: 0; 
+  	  & > a { 
+  		  padding: 0.75em;
+  		  text-transform: none;
+  		  transition: all 0.4s ease; 	
+  		}
+  	}
+  	li:hover a {
+  	
+  	}
+  	.sub-menu {
+  		li > a {
+        
+        &:hover {
+          
+      	}
+  		}
+  		.dropdown-toggle {
+      	&.toggled  {
+          
+        }
+    	}
+  	}
+  	.dropdown-toggle {
+    	&.toggled  {
+        
+      }
+  	}
+  }
+	.active {
+		a {
+							
+		}
+	}
+  li:hover {
+		a {
+			
+		}			
+	}
+}
+
+// Nav Toggle
+
+.nav-toggle {
+	display: block;
+	border-radius: 4px;
+  height: 40px;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  text-shadow: none;
+  text-indent: -999px;
+  user-select: none;
+  max-width: 15em; 
+  margin-right: auto;
+  margin-left: auto;  
+  width: 100%; 
+  -webkit-font-smoothing: antialiased;
+  -webkit-touch-callout: none;
+  transition: width 0.4s ease;
+  // This is where you chose the mobile icon, or button text.
+  &:before {
+  	border-radius: 4px;
+    content: "Menu";
+    font: {
+      weight: 500;
+      size: 1em;
+      family: $sans-serif;
+      variant: normal;
+    }
+    position: absolute;
+    top: 0;
+    left: 0;   	
+    speak: none;
+    line-height: 40px;
+    margin: 0 auto;
+    text-indent: 0;
+    text-align: center;
+    text-transform: none;    
+    width: 100%; 
+    transition: background 300ms ease;
+    -webkit-font-smoothing: subpixel-antialiased;	
+  }
+  // 320
+  @media (min-width: $break-tiny-phone) {
+    flex: 1;
+    align-self: center;
+    margin-right: 0;
+    margin-left: auto; 
+    max-width: 6em;
+    &:before {
+      font-size: 1em;  
+    } 
+  }
+}
+
+// Nav Toggle Active
+
+.nav-toggle.active {
+  width: 100%;    
+  &:before {
+  	content: '\e804';
+  	font-size: 1.5em;
+  	font-family: $font-icon;
+  	font-weight: 500;  
+    line-height: 40px;
+    height: 40px; 		
+    text-shadow: none;
+  }
+  // 320
+  @media (min-width: $break-tiny-phone) { 
+    width: 50px;  
+  }
+}
+
+
+// 320
+@media (min-width: $break-tiny-phone) {
+  .main-nav {
+    .container {
+      display: flex;
+  		align-items: center;
+  		flex-flow: row wrap;
+  		justify-content: space-between;
+    }
+  }
+  .site-logo {
+    //display: flex;
+    flex:1;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: left;
+    margin: 0;
+    padding-top: 0; 
+    width: auto; 
+	}
+}
+
+// 800
+@media (min-width: $break-800) {
+  .main-nav {
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;     
+  }
+  .site-logo { 
+  }
+  .nav-toggle {
+    display: none !important;  
+  }  
+}
+
+
+
+// Show Nav @ 800 
+@media (min-width: $break-800) {  
+      
+  .js-nav .nav-collapse,
+  .nav-collapse {
+    display: inline-block;  
+    display: flex;
+    flex: 3;
+    max-height: 100%;
+    height: auto;
+    overflow: visible;
+  }
+  .nav-toggle {
+    display: none;
+  }
+  .dropdown ul ul {
+    border: 0;
+    padding: 0;
+  }
+  
+  .nav-collapse {
+		//align-self: flex-start;
+		//max-height: 0 !important; 
+		& > ul {	
+			display: flex;
+			align-items: center; 
+			padding-top: 0; 
+			position: relative;	
+			width: 100%;
+		}	
+	  & > ul > li {
+		  flex-grow: 1;
+		  margin-bottom: 0; 
+	    width: auto;
+		  & > a {			  
+		    margin: 0;
+		    padding-top: 0;
+		    padding-right: 0;
+		    padding-bottom: 0;
+		    padding-left: 0;
+		    font-size: 1em; 
+		    line-height: 1;
+		    height: auto; 	
+		    text-align: right;
+		    position: relative;
+		    transition: color 0.4s ease,
+		                padding 0.4s ease;
+		    z-index: 1001;
+		  }
+		  // link icon
+		  i {
+			  display: none;
+		  }
+	  }
+	  
+	  // Sub Menu
+	  	
+		.sub-menu {
+  		//display: none;  
+		  position: absolute;
+		  top: 0;
+		  left: 0; 
+		  padding-top: 0;
+		  padding-top: 3em;
+		  pointer-events: none;
+		  width: 100%;
+		  max-height: 0;
+		  width: 300px;
+		  transition: opacity 0.4s ease,
+                  max-height 0.4s ease,
+                  padding 0.5s ease;
+		  z-index: 1000;
+		  & > li {
+			  display: block;
+			  width: 100%;
+			  z-index: 1000;  				  
+				& > a {	
+					display: block;
+					font-size: 0.875em;
+					font-size: 0.875rem;  
+					height: auto;  
+					text-align: left;					
+					padding: 0.7em 1em;
+					visibility: visible;	
+				}				
+			}
+			// Sub Menu Dropdown
+			& > li.focus-nav {
+  			.sub-menu {
+    			display: block;
+    			max-height: 999px;
+    			opacity: 1;   
+    			padding-top: 0;   
+  			}
+			}
+			
+			// Sub Sub Menu
+			
+			.sub-menu {
+  			//display: none;  
+  			//opacity: 1;
+  			max-height: 0;
+  			padding-top: 0;   
+    		top: 0; 
+    		left: 300px;
+    		//position: relative;   
+    		li > a {
+          &:hover {
+        	}        		
+    		} 
+  		}
+	  }
+	  
+	  // Last Nav Item
+	  
+	  & > ul > li:last-child,
+	  & > ul > li:nth-last-child(2) {	  
+  	  & > .sub-menu {
+  			left: auto;
+  			right: 0;
+  			.sub-menu {
+    			left: auto;
+    			right: 300px; 
+  			}  
+  		}
+		}
+		
+		// Hover State
+		
+		& > ul > li:hover,
+		& > ul > li:focus {
+			cursor: pointer;
+			& > a {
+				background: none;
+				color: #333;
+			}			
+		}
+		
+		// Dropdown
+		
+		& > ul > li.dropdown {  
+  		position: relative;
+  		a {
+    		//position: relative;
+    		//z-index: 1002;
+  		}
+  		.dropdown-toggle {
+    		display: none;  
+  		}
+			& > a:after {
+			  content: '\e818';
+        font-family: $font-icon;
+        font-size: 0.875em;
+        padding-left: 0.5em;
+        width: 0.938em;	
+			}
+		}
+		
+		.sub-menu > li.dropdown {
+  		& > a {
+    		display: table;
+  		}
+			& > a:after {
+        //display: block; 
+  			//background: #BBB;
+  			//position: absolute;
+  			//top: 0;
+  			//right: 0;
+  			//height: 30px;
+  			//width: 30px;
+  			//z-index: 1003; 			
+			  //content: '\e805';			   
+        //font-family: $font-icon;
+        //font-size: 1.125em;
+        //padding-left: 0;
+        //text-align: right;  
+        //width: auto;
+        // default style
+        content: '\e818';
+        display: table-cell;
+        font-family: $font-icon;
+        font-size: 0.875em;
+        padding-left: 0.5em;
+        width: 0.938em;	
+			}
+			&.focus-nav {
+  			& > a:after {
+  			  content: '\e804';
+  		  }
+			}
+		}
+		
+		
+		// Dropdown Hover
+		
+		& > ul > li.dropdown:hover,
+		& > ul > li.dropdown:focus {  		
+			& > .sub-menu {
+				padding-top: 1.5em;
+				pointer-events: all;
+				//display: block;   
+				max-height: 9999px;
+				opacity: 1;
+				overflow: visible;  
+			}  
+		}
+		
+		.sub-menu > li.dropdown:hover,
+		.sub-menu > li.dropdown:focus {
+  		& > .sub-menu {
+    		//display: block;
+    		pointer-events: all; 
+				max-height: 9999px;
+				opacity: 1;
+				overflow: visible;  
+			}
+		}
+		
+		
+		.no-flexbox & {
+    	display: inline-block;
+    	text-align: right; 
+    	width: 75%;  
+    	@include clearfix;
+    	& > ul {
+      	display: inline-block;  
+      	width: auto;
+      	& > li {
+         	float: left;
+         	margin-left: 3em;
+         	// 1200
+         	@media (min-width: $break-lg-screen) {
+           	margin-left: 5em;  
+         	} 
+      	}     
+    	}
+    	 
+  	}
+	}  
+}
+

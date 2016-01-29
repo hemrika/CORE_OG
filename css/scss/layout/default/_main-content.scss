@@ -1,0 +1,166 @@
+.site-wrap {
+  display: flex;
+  flex-flow: column;
+  min-height: 100%;
+  .IE & {
+    height: 100%; 
+  } 
+}
+
+.site-header, .site-footer {
+  //flex:1; 
+}
+
+.site-content {
+  flex-grow: 1;
+  margin: 0 auto;
+  padding-top: 0; 
+  padding-bottom: 2em; 
+  width: 100%;   
+  // 800
+  @media (min-width: $break-800) {    
+    padding-bottom: 0;        
+  } 	
+}
+
+// Page Content
+
+.page-content {
+  @include container;
+}
+
+// Content Main
+.content-main { 
+  padding-bottom: 2em; 
+}
+
+// Sidebar Main
+.sidebar-main {
+}
+
+// Two Col Layout
+
+.two-col {
+  padding-bottom: 0;  
+  .page-content {
+    padding-top: 1.5em; 
+    padding-right: 0;
+    padding-left: 0;  
+  }
+  .content-main {
+    padding-bottom: 0;
+    &:first-of-type section {
+      padding-top: 0; 
+    }  
+  }   
+  .sidebar-main {      
+     
+  }
+  
+  // 800
+  @media (min-width: $break-800) {
+    .page-content {
+      display: flex;
+      flex-flow: row wrap;
+      padding-top: 2.5em; 
+      padding-right: 1.5em; 
+    }
+    .content-main {
+      flex-grow: 1;
+      padding-right: 0;
+      width: 70%;
+    }
+    .sidebar-main {
+      flex-grow: 1; 
+      width: 30%;
+      // use this when a bg is defined
+      //& > section {
+        //padding-top: 1em;
+        //padding-bottom: 1em;   
+      //}
+      //section,
+      //div {
+        //& > .container,
+        //& >.content-post-wrap {
+          //padding-right: 0;
+          //padding-left: 0;
+        //}  
+      //}
+    }
+  }
+}
+
+// shift sidebar to the left @ 1600
+//@media (min-width: $break-xxl-screen) {
+  //.two-col {
+    //.page-content {
+      //flex-flow: row-reverse wrap;
+    //}
+    //.content-main {
+      //padding-right: 0;
+      //padding-left: 2.5%;
+      //width: 80%;  
+    //}
+    //.sidebar-main {
+      //width: 20%; 
+    //}
+  //}
+//}
+
+// Content Header
+
+.content-header {
+  padding-top: 2em; 
+  padding-bottom: 2em;
+  .content-post-wrap {
+    padding: 0; 
+  }
+  .content-post,
+  .post-content,
+  .content-post ul {
+    margin-bottom: 0; 
+    padding-bottom: 0;  
+  }
+  
+/*
+  // 667 ~ 1200
+  @media (min-width: $break-ml-phone) and (max-width: $break-lg-screen) {      
+    .two-col & { 
+      .post-wrap {
+        flex-flow: column-reverse;
+      }
+      .post-content,
+      .post-media {
+        width: 100%;  
+      }
+      .post-content {
+        padding-top: 1.5em; 
+        padding-left: 0;  
+      }
+    }
+  }
+*/
+  //  800 ~ 1200
+  @media (min-width: $break-800) and (max-width: $break-lg-screen) {
+    .two-col & {
+      //padding-top: 0;
+    } 
+  }
+  // 1200
+  @media (min-width: $break-lg-screen) {
+    .two-col & {
+      padding-right: 0;   
+      .post-wrap {
+        flex-flow: row-reverse wrap;
+      }
+      .post-content {
+        padding-top: 0; 
+        padding-left: 3%;
+        width: 60%;   
+      }
+      .post-media {
+        width: 40%;
+      }
+    }
+  }
+}

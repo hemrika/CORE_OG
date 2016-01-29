@@ -1,0 +1,153 @@
+// * UTILITIES................................Components, Variables, Mixins 	
+// * .....Variables.........................Declarations of Sass variables
+// * ..........Breakpoints
+// * ..........Grid
+// * ..........Colors
+// * ..........Font Stacks
+// * ..........Global Helpers (text-shadow, transform, modifiers, etc.)
+// * .....Mixins.................................Sass mixins
+// * ..........Link States
+// * ..........Opacity
+// * ..........Text Modifications (reg mark, text-overflow, etc.)
+// * ..........Form & Table Resets
+// * ..........Content Blocks 
+// * ..........Image Styles 
+// * ..........Clearfix 
+
+// * BASE................................Base styles to get us going
+// * .....Normalize
+// * .....Typography
+// * .....Font Icons (place all font files in base/fonts/font-resources/ )
+// * .....Text-related elements (p, blockquote, lists)
+
+// * PLUGINS................................All things not hand-coded
+// * .....Responsive Nav   http://responsive-nav.com/
+// * .....Tablesaw         https://github.com/filamentgroup/tablesaw
+// * .....Flickity         http://flickity.metafizzy.co/
+// * .....Remodal          https://github.com/VodkaBears/Remodal#remodal
+// * .....Venobox          http://lab.veno.it/venobox/
+// * .....BS Collapse      http://getbootstrap.com/javascript/#collapse
+
+// * LAYOUT................................Page & Template layout
+// * .....Grids
+// * .....Global (body, containers)
+// * .....Main Content
+// * .....Main Nav
+// * .....Site Header
+// * .....Site Footer
+
+// * MODULES................................Scalable Web Parts and Panels
+// * .....UI
+// * .....Content Post
+// * .....CTA
+// * .....Media
+// * .....Sliders
+// * .....Contact
+// * .....Calendar
+// * .....Panel Groups
+
+
+// * OVERRIDES................................Last resort to get a handle on the css
+// * .....KenticoCMS
+// * .....fallbacks
+
+
+//******* UTILITIES.........SCSS Variables & Mixins, Breakpoints, placeholders, etc.
+@import "utilities/variables";
+@import "utilities/mixins";
+
+//******* BASE.........Normalize, Typography, Critical CSS.
+@import "base/normalize";
+@import "base/fonts/icon-fonts";
+@import "base/typography";
+
+//******* PLUGINS.........Third party stylesheets for plugin components.
+@import "plugins/responsive-nav";
+@import "plugins/tablesaw";
+@import "plugins/flickity";
+@import "plugins/remodal";
+@import "plugins/venobox";
+@import "plugins/collapse";
+
+
+//******* LAYOUT.........Header/Footer, Main Nav, Main Content
+
+// Grids
+@import "layout/grids/grid-wrap";
+@import "layout/grids/post-grid";
+
+// Layout Options happen from the imports inside these partials
+@import "layout/default/global";
+@import "layout/default/main-nav";
+@import "layout/default/site-header";
+@import "layout/default/main-content";
+@import "layout/default/site-footer";
+
+//******* MODULES.........Widget/Web Part components.
+
+// UI
+@import "modules/UI/blog-info";
+@import "modules/UI/buttons";
+@import "modules/UI/breadcrumbs";
+@import "modules/UI/collapsible-panels";
+@import "modules/UI/forms";
+@import "modules/UI/media-wrap";
+@import "modules/UI/pager-controls";
+@import "modules/UI/pricing-plans";
+@import "modules/UI/search-bar";
+@import "modules/UI/search-results";
+@import "modules/UI/soc-media-icons";
+
+@import "modules/UI/post-archive";
+@import "modules/UI/tables";
+@import "modules/UI/tag-list";
+@import "modules/UI/lightbox";
+@import "modules/UI/modal";
+
+// CONTENT POST
+@import "modules/content-post/blog-posts";
+@import "modules/content-post/content-images";
+@import "modules/content-post/content-posts";
+@import "modules/content-post/feature-media-detail";
+@import "modules/content-post/feature-posts";
+@import "modules/content-post/teaser-posts";
+@import "modules/content-post/testimonial-block";
+@import "modules/content-post/sidebar-posts";
+
+// CTA
+@import "modules/CTA/content-banner";
+@import "modules/CTA/cta-row";
+@import "modules/CTA/cta-video";
+@import "modules/CTA/hero-banner";
+
+// MEDIA
+@import "modules/media/media-posts";
+@import "modules/media/media-viewer";
+@import "modules/media/media-gallery";
+
+// SLIDERS
+@import "modules/sliders/slider-global";
+@import "modules/sliders/content-post-slider";
+@import "modules/sliders/full-width-slider";
+@import "modules/sliders/promo-slider";
+@import "modules/sliders/tab-slider";
+
+// CONTACT
+@import "modules/contact/contact-banner";
+@import "modules/contact/contact-form";
+@import "modules/contact/contact-panels";
+
+// CALENDAR
+@import "modules/calendar/calendar-list";
+@import "modules/calendar/calendar-detail";
+
+// PANEL GROUPS
+@import "modules/panel-groups/panel-group-global";
+@import "modules/panel-groups/panel-group-2col";
+@import "modules/panel-groups/panel-group-3col";
+@import "modules/panel-groups/panel-group-4col";
+
+//******* OVERRIDES.........Kentico UI edits, no-js fallbacks
+
+@import "overrides/KenticoCMS";
+@import "overrides/fallbacks";

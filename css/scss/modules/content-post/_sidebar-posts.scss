@@ -1,0 +1,29 @@
+.sidebar-posts {
+  padding-top: 2em;
+  padding-bottom: 2em;
+  .content-post { 
+  } 
+  .button-group {
+    align-items: flex-start;
+    &[data-minwidth~="300"] {
+      flex-flow: row wrap;
+      justify-content: flex-start;
+      [class*="btn"] {
+        width: auto;  
+      }
+    }
+  }  
+  .post-wrap {
+    flex-flow: column-reverse;
+  }
+  .post-content {
+    padding-left: 0; 
+  }
+  .post-content,
+  .post-media {
+    width: 100%;  
+  }
+  .post-media {
+    margin-bottom: 1em; 
+  }
+}

@@ -1,0 +1,396 @@
+<!doctype html>
+<!--[if IE 8]><html class="no-js ie9 ie8" lang="en"><![endif]-->
+<!--[if IE 9]><html class="no-js ie9" lang="en"><![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-js" lang="en">
+	<!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>CORE :: Two Col Layout</title>
+    <meta name="description" content="Site description goes here.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="App_Themes/ThemeName/images/touch-icons/favicon-144.png">
+    <!--[if IEMobile]><meta http-equiv="cleartype" content="on" /><![endif]-->
+    <link rel="apple-touch-icon" href="App_Themes/ThemeName/images/touch-icons/favicon-152.png">   		
+    <!-- Core CSS -->   		
+    <link href="css/core.css" rel="stylesheet">
+    <!-- Theme CSS -->   		
+    <link href="App_Themes/ThemeName/theme.css" rel="stylesheet">
+  	<!-- Modernizr -->
+  	<script src="http://cdn.kyamedia.com/js/modernizr.js"></script>  	
+  </head>
+  <body>
+	  <!--[if lt IE 10]>
+      <p class="update-browser">This browser version is not recommended. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>  
+		<![endif]-->
+		<div class="site-wrap">
+  		<!-- HEADER -->
+		  <header class="site-header" role="banner">
+  		  <!-- HEADER NAVBAR -->
+			  <section class="header-navbar">
+				  <div class="container">
+					  <!-- Header Nav -->
+					  <nav class="header-nav">
+					    <a href="#"><i class="icon-location"></i> Location</a>
+					    <a href="#"><i class="icon-clock"></i> Schedule</a>
+					    <a href="#"><i class="icon-heart"></i> Give</a>
+					  </nav>
+					  <!-- Header Search -->
+					  <div class="header-search">
+					    <!-- Soc Media Icons -->
+					    <div class="soc-media-icons">
+  					    <a class="icon-facebook-circled" href="#"><span class="sr-only">Like Us On Facebook</span></a><a class="icon-twitter-circled" href="#"><span class="sr-only">Follow Us On Twitter</span></a>
+  					  </div>
+					    <!-- Search Bar -->
+					    <div class="search-bar">
+  							<input type="text"><input type="submit" value="search">							
+					    </div>
+					  </div>
+				  </div>
+			  </section>					
+				<!-- MAIN NAV -->
+				<section class="main-nav">
+			  	<div class="container">
+  			  	<!-- Site Logo -->
+		        <h1 class="site-logo">
+				      <a href="index.html"><!-- <img src="App_Themes/Cornerstone/images/UI/CS-logo.svg" alt="CORE :: The DPI theme code base"> -->LOGO</a>
+			      </h1>
+			      <!-- Nav -->
+			      <script>
+  				// *** responsive-nav.js 1.0.39 *** https://github.com/viljamis/responsive-nav.js *** http://responsive-nav.com *** Copyright (c) 2015 @viljamis        
+(function(a,d,b){var c=function(f,h){var g=!!d.getComputedStyle;if(!g){d.getComputedStyle=function(A){this.el=A;this.getPropertyValue=function(C){var B=/(\-([a-z]){1})/g;if(C==="float"){C="styleFloat"}if(B.test(C)){C=C.replace(B,function(){return arguments[2].toUpperCase()})}return A.currentStyle[C]?A.currentStyle[C]:null};return this}}var s=function(D,B,C,A){if("addEventListener" in D){try{D.addEventListener(B,C,A)}catch(E){if(typeof C==="object"&&C.handleEvent){D.addEventListener(B,function(F){C.handleEvent.call(C,F)},A)}else{throw E}}}else{if("attachEvent" in D){if(typeof C==="object"&&C.handleEvent){D.attachEvent("on"+B,function(){C.handleEvent.call(C)})}else{D.attachEvent("on"+B,C)}}}},t=function(D,B,C,A){if("removeEventListener" in D){try{D.removeEventListener(B,C,A)}catch(E){if(typeof C==="object"&&C.handleEvent){D.removeEventListener(B,function(F){C.handleEvent.call(C,F)},A)}else{throw E}}}else{if("detachEvent" in D){if(typeof C==="object"&&C.handleEvent){D.detachEvent("on"+B,function(){C.handleEvent.call(C)})}else{D.detachEvent("on"+B,C)}}}},i=function(C){if(C.children.length<1){throw new Error("The Nav container has no containing elements")}var B=[];for(var A=0;A<C.children.length;A++){if(C.children[A].nodeType===1){B.push(C.children[A])}}return B},u=function(C,A){for(var B in A){C.setAttribute(B,A[B])}},m=function(B,A){if(B.className.indexOf(A)!==0){B.className+=" "+A;B.className=B.className.replace(/(^\s*)|(\s*$)/g,"")}},q=function(C,A){var B=new RegExp("(\\s|^)"+A+"(\\s|$)");C.className=C.className.replace(B," ").replace(/(^\s*)|(\s*$)/g,"")},v=function(D,C,B){for(var A=0;A<D.length;A++){C.call(B,A,D[A])}},e=function(B,A){return B.className&&new RegExp("(\\s|^)"+A+"(\\s|$)").test(B.className)},x=function(){var A=this,B=p.menuItems;while(-1===A.className.indexOf(B)){if("li"===A.tagName.toLowerCase()){if(-1!==A.className.indexOf("focus")){A.className=A.className.replace(" focus","")}else{A.className+=" focus"}}A=A.parentElement}};var k,p,j,z=a.createElement("style"),l=a.documentElement,y,r,w,o;var n=function(C,A){var B;this.options={animate:true,transition:284,label:"Menu",insert:"before",customToggle:"",closeOnNavClick:false,openPos:"relative",navClass:"nav-collapse",navActiveClass:"js-nav-active",jsClass:"js",enableFocus:false,enableDropdown:false,menuItems:"menu-items",subMenu:"sub-menu",openDropdown:"Open sub menu",closeDropdown:"Close sub menu",init:function(){},open:function(){},close:function(){},resizeMobile:function(){},resizeDesktop:function(){}};for(B in A){this.options[B]=A[B]}m(l,this.options.jsClass);this.wrapperEl=C.replace("#","");if(a.getElementById(this.wrapperEl)){this.wrapper=a.getElementById(this.wrapperEl)}else{if(a.querySelector(this.wrapperEl)){this.wrapper=a.querySelector(this.wrapperEl)}else{throw new Error("The nav element you are trying to select doesn't exist")}}this.wrapper.inner=i(this.wrapper);p=this.options;k=this.wrapper;this._init(this)};n.prototype={destroy:function(){this._removeStyles();q(k,"closed");q(k,"opened");q(k,p.navClass);q(k,p.navClass+"-"+this.index);q(l,p.navActiveClass);k.removeAttribute("style");k.removeAttribute("aria-hidden");t(d,"resize",this,false);t(d,"focus",this,false);t(a.body,"touchmove",this,false);t(j,"touchstart",this,false);t(j,"touchend",this,false);t(j,"mouseup",this,false);t(j,"keyup",this,false);t(j,"click",this,false);if(!p.customToggle){j.parentNode.removeChild(j)}else{j.removeAttribute("aria-hidden")}if(p.enableDropdown){var A=this;v(o,function(B,C){t(C,"touchstart",A,false);t(C,"touchend",A,false);t(C,"mouseup",A,false);t(C,"keyup",A,false);t(C,"click",A,false)})}},toggle:function(){if(y===true){if(!w){this.open()}else{this.close()}}},open:function(){if(!w){q(k,"closed");m(k,"opened");m(l,p.navActiveClass);m(j,"active");k.style.position=p.openPos;u(k,{"aria-hidden":"false"});u(k,{"aria-expanded":"true"});u(j,{"aria-expanded":"true"});w=true;p.open()}},close:function(){if(w){m(k,"closed");q(k,"opened");q(l,p.navActiveClass);q(j,"active");u(k,{"aria-hidden":"true"});u(k,{"aria-expanded":"false"});u(j,{"aria-expanded":"false"});if(p.animate){y=false;setTimeout(function(){k.style.position="absolute";y=true;if(p.enableDropdown){q(k,"dropdown-active");v(o,function(A,B){q(B,"toggled");q(B.nextSibling,"toggled")})}},p.transition+10)}else{k.style.position="absolute";if(p.enableDropdown){q(k,"dropdown-active");v(o,function(A,B){q(B,"toggled");q(B.nextSibling,"toggled")})}}w=false;p.close()}},resize:function(){if(d.getComputedStyle(j,null).getPropertyValue("display")!=="none"){r=true;u(j,{"aria-hidden":"false"});u(k,{"aria-expanded":"false"});u(j,{"aria-expanded":"false"});if(k.className.match(/(^|\s)closed(\s|$)/)){u(k,{"aria-hidden":"true"});k.style.position="absolute"}if(!k.className.match(/(^|\s)closed(\s|$)/)){u(k,{"aria-expanded":"true"});u(j,{"aria-expanded":"true"})}this._createStyles();this._calcHeight();p.resizeMobile()}else{r=false;u(j,{"aria-hidden":"true"});u(k,{"aria-hidden":"false"});k.removeAttribute("aria-expanded");j.removeAttribute("aria-expanded");k.style.position=p.openPos;this._removeStyles();p.resizeDesktop()}},handleEvent:function(B){var A=B||d.event;switch(A.type){case"touchstart":this._onTouchStart(A);break;case"touchmove":this._onTouchMove(A);break;case"touchend":case"mouseup":this._onTouchEnd(A);break;case"click":this._preventDefault(A);break;case"keyup":this._onKeyUp(A);break;case"focus":case"resize":this.resize(A);break}},_init:function(){this.index=b++;m(k,p.navClass);m(k,p.navClass+"-"+this.index);m(k,"closed");y=true;w=false;this._closeOnNavClick();this._createToggle();this._transitions();this.resize();this._createFocus();this._createDropdown();var A=this;setTimeout(function(){A.resize()},20);s(d,"resize",this,false);s(d,"focus",this,false);s(a.body,"touchmove",this,false);s(j,"touchstart",this,false);s(j,"touchend",this,false);s(j,"mouseup",this,false);s(j,"keyup",this,false);s(j,"click",this,false);p.init()},_createStyles:function(){if(!z.parentNode){z.type="text/css";a.getElementsByTagName("head")[0].appendChild(z)}},_removeStyles:function(){if(z.parentNode){z.parentNode.removeChild(z)}},_createToggle:function(){if(!p.customToggle){var B=a.createElement("a");B.innerHTML=p.label;u(B,{href:"#","class":"nav-toggle"});if(p.insert==="after"){k.parentNode.insertBefore(B,k.nextSibling)}else{k.parentNode.insertBefore(B,k)}j=B}else{var A=p.customToggle.replace("#","");if(a.getElementById(A)){j=a.getElementById(A)}else{if(a.querySelector(A)){j=a.querySelector(A)}else{throw new Error("The custom nav toggle you are trying to select doesn't exist")}}}},_closeOnNavClick:function(){if(p.closeOnNavClick){var B=k.getElementsByTagName("a"),A=this;v(B,function(C,D){s(B[C],"click",function(){if(r){A.toggle()}},false)})}},_preventDefault:function(A){if(A.preventDefault){if(A.stopImmediatePropagation){A.stopImmediatePropagation()}A.preventDefault();A.stopPropagation();return false}else{A.returnValue=false}},_onTouchStart:function(A){if(!Event.prototype.stopImmediatePropagation){this._preventDefault(A)}this.startX=A.touches[0].clientX;this.startY=A.touches[0].clientY;this.touchHasMoved=false;t(j,"mouseup",this,false)},_onTouchMove:function(A){if(Math.abs(A.touches[0].clientX-this.startX)>10||Math.abs(A.touches[0].clientY-this.startY)>10){this.touchHasMoved=true}},_onTouchEnd:function(D){this._preventDefault(D);if(!r){return}var A=D||d.event,E=A.target||A.srcElement,C=false;if(e(E,"dropdown-toggle")&&p.enableDropdown){C=true}if(!this.touchHasMoved){if(D.type==="touchend"){if(C){this._toggleDropdown(E)}else{this.toggle()}return}else{var B=D||d.event;if(!(B.which===3||B.button===2)){if(C){this._toggleDropdown(E)}else{this.toggle()}}}}},_onKeyUp:function(C){var A=C||d.event,D=C.target,B=false;if(e(D,"dropdown-toggle")&&p.enableDropdown){B=true}if(A.keyCode===13){if(B){this._toggleDropdown(D)}else{this.toggle()}}},_transitions:function(){if(p.animate){var A=k.style,B="max-height "+p.transition+"ms";A.WebkitTransition=A.MozTransition=A.OTransition=A.transition=B}},_calcHeight:function(){var C=0;for(var B=0;B<k.inner.length;B++){C+=k.inner[B].offsetHeight}var A="."+p.jsClass+" ."+p.navClass+"-"+this.index+".opened{max-height:"+C+"px !important} ."+p.jsClass+" ."+p.navClass+"-"+this.index+".opened.dropdown-active {max-height:9999px !important}";if(z.styleSheet){z.styleSheet.cssText=A}else{z.innerHTML=A}A=""},_createFocus:function(){if(!p.enableFocus){return}var D=k.getElementsByTagName("ul")[0],B=D.getElementsByTagName("a"),A,C;for(C=0,A=B.length;C<A;C++){B[C].addEventListener("focus",x,true);B[C].addEventListener("blur",x,true)}},_createDropdown:function(){if(!p.enableDropdown){return}var B=this;var E=k.getElementsByTagName("ul")[0],D=E.getElementsByTagName("ul"),C,A;m(k,"multiple-level-nav");for(C=0,A=D.length;C<A;C++){D[C].parentNode.setAttribute("aria-haspopup","true");D[C].insertAdjacentHTML("beforebegin",'<button class="dropdown-toggle" aria-expanded="false">'+p.openDropdown+"</button>")}o=k.querySelectorAll(".dropdown-toggle");v(o,function(F,G){s(G,"touchstart",B,false);s(G,"touchend",B,false);s(G,"mouseup",B,false);s(G,"keyup",B,false);s(G,"click",B,false)})},_toggleDropdown:function(D){if(D.innerHTML===p.openDropdown){D.innerHTML=p.closeDropdown}else{D.innerHTML=p.openDropdown}var C=D.parentNode,A=e(C.parentNode.parentNode,"dropdown");if(!e(D,"toggled")){m(D,"toggled");D.setAttribute("aria-expanded","true");var B=D.nextElementSibling;m(B,"toggled");m(k,"dropdown-active")}else{q(D,"toggled");D.setAttribute("aria-expanded","false");var B=D.nextElementSibling;q(B,"toggled");q(k,"dropdown-active")}},};return new n(f,h)};if(typeof module!=="undefined"&&module.exports){module.exports=c}else{d.responsiveNav=c}}(document,window,0));
+  				</script>
+		        <nav class="nav-collapse" role="navigation">
+		          <ul>		          
+			          <li class="active"><a href="about.html"><i class="icon-info-circled"></i> About</a></li>         		            
+		            <li class="dropdown">
+		            	<a href="calendar.html"><i class="icon-calendar"></i> Calendar</a>
+										<ul class="sub-menu">
+  										<li><a href="#">Submenu link</a></li>
+  										 <li class="dropdown">
+                        <a href="#">Submenu link</a>
+                        <ul class="sub-menu">
+                          <li><a href="#">Sub Sublink</a></li>
+                          <li><a href="#">Sub Sublink</a></li>
+                          <li><a href="#">Sub Sublink</a></li>
+                        </ul>
+                      </li>
+                      <li><a href="#">Sub link</a></li>					 
+										</ul>
+		            </li>
+		            <li><a href="membership.html"><i class="icon-compass"></i> Ministries</a></li>
+		            <li class="dropdown">
+		              <a href="fundraising.html"><i class="icon-tools"></i> Resources</a>
+	                <ul class="sub-menu">
+										<li><a href="#">Submenu link</a></li>
+										 <li class="dropdown">
+                      <a href="#">Submenu link</a>
+                      <ul class="sub-menu">
+                        <li><a href="#">Sub Sublink</a></li>
+                        <li><a href="#">Sub Sublink</a></li>
+                        <li><a href="#">Sub Sublink</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="#">Sub link</a></li>					 
+									</ul>	            
+		            </li>
+		            <li class="dropdown">
+		              <a href="contact.html"><i class="icon-megaphone"></i> Contact</a>
+	                <ul class="sub-menu">
+										<li class="dropdown">
+										  <a href="#">Dropdown Link</a>
+										  <ul class="sub-menu">
+                        <li><a href="#">Sub Sublink</a></li>
+                        <li><a href="#">Sub Sublink</a></li>
+                        <li><a href="#">Sub Sublink</a></li>
+                      </ul>
+									  </li>
+									</ul>
+		            </li>	            
+		          </ul>
+		        </nav>
+		        <script>
+  		        // Mobile Nav
+              var navigation = responsiveNav(".nav-collapse", {
+                animate: true,                    // Boolean: Use CSS3 transitions, true or false
+                transition: 500,                  // Integer: Speed of the transition, in milliseconds
+                label: "Menu",                    // String: Label for the navigation toggle
+                insert: "before",                 // String: Insert the toggle before or after the navigation
+                customToggle: "",                 // Selector: Specify the ID of a custom toggle
+                enableFocus: true,
+              	enableDropdown: true,
+              	openDropdown: '<span class="screen-reader-text">Open sub menu</span>',
+              	closeDropdown: '<span class="screen-reader-text">Close sub menu</span>',
+                closeOnNavClick: true,            // Boolean: Close the navigation when one of the links are clicked
+                openPos: "relative",              // String: Position of the opened nav, relative or static
+                navClass: "nav-collapse",         // String: Default CSS class. If changed, you need to edit the CSS too!
+                navActiveClass: "js-nav-active",  // String: Class that is added to <html> element when nav is active
+                jsClass: "js-nav",                // String: 'JS enabled' class which is added to <html> element
+              });
+            </script>
+			     </div>	      	
+			  </section>
+		  </header>					    
+		  <!-- MAIN -->
+      <main class="site-content two-col" role="main">
+        <!-- BREADCRUMBS -->
+        <div class="breadcrumbs">
+          <div class="container">
+            <!-- Breadcrumb Item -->
+            <a href="/" class="CMSBreadCrumbsLink">First</a>
+            <span class="bc-divider">›</span>
+            <a href="/" class="CMSBreadCrumbsLink">Second</a>
+            <span class="bc-divider">›</span>
+            <a href="/" class="CMSBreadCrumbsLink">Third</a>
+            <span class="bc-divider">›</span>
+            <!-- Current Item -->
+            <span class="CMSBreadCrumbsCurrentItem">Current</span>
+          </div>
+        </div>
+        <!-- Page Content Wrap -->
+        <div class="page-content">          
+          <!-- Page Content-->
+          <div class="content-main">
+            <!-- CONTENT HEADER -->	    
+              <section class="content-header">        
+                <div class="container">
+                  <!-- Post -->
+                  <article class="cq content-post">
+                    <div class="post-wrap">
+                      <!-- Post Content -->
+                      <div class="post-content">
+                        <!-- Post Title -->
+                        <h2 class="post-title">Content Post Title</h2>
+                        <!-- Post Subtitle -->
+                        <p class="post-subtitle">This is a Subtitle</p>              
+                        <!-- Post Text -->
+                        <div class="post-text">
+                          Voluptates veritatis tempore odit id. Aspernatur, mollitia, asperiores, voluptates, odit sunt ipsam voluptatibus dolorem quis culpa sed dignissimos doloribus saepe incidunt iure tempora blanditiis.                  
+                          <h3>Content Post Sub Header</h3>
+                          <!-- Post List -->
+                          <ul>                
+                            <li>This is a Post List Item that does not link.</li>
+                            <li><a href="#">Maybe you want to make this Post List Item clickable?</a></li>
+                            <li><a href="#">An example of a Post List Item with really, really long text.</a></li>
+                            <li><a href="#">More post information goes here.</a></li>
+                            <li><a href="#">This is another list item link.</a></li>
+                            <li><a href="#">Another example of Post List text.</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <!-- Post Media -->
+                      <div class="post-media">
+                        <!-- Image -->
+                        <figure>
+                          <a href="#">
+                            <picture>
+                              <source data-srcset="http://placehold.it/2000x1125/a6e0ad?text=2000x1125" media="(min-width: 1200px)" />
+                              <source data-srcset="http://placehold.it/1200x675/debffb?text=1200x675" media="(min-width: 700px)" />
+                              <source data-srcset="http://placehold.it/800x450/fd9595?text=800x450" />
+                              <img data-srcset="http://placehold.it/800x450/fd9595?text=800x450" alt="">
+                            </picture>
+                          </a>
+                          <noscript>
+                            <a href="#">
+                            <img src="http://placehold.it/800x450/fd9595?text=800x450" alt="Responsive Feature Post">
+                            </a>
+                          </noscript>
+                          <!-- Image Caption-->		         
+                          <a href="#">
+                            <figcaption>
+                              <p class="image-caption">Default Caption</p>
+                            </figcaption>
+                          </a>
+                        </figure>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+              </section>
+          </div>
+          <!-- Page Sidebar -->
+          <aside class="cq sidebar-main" role="complementary">
+            <!-- Blog Info -->
+            <section class="blog-info">
+              <div class="container">
+                <!-- Module Title -->
+                <h1 class="module-title">Blog Info</h1>
+                <!-- Info Text -->
+                <div class="post-text">
+                  This is where you give us a little tidbit about your blog. Maybe you will use this space to let us know more about you and the purpose of the blog. Maybe you talk about fly fishing or flapjacks. The idea is to provide information here.
+                  <h3>This is a heading h3.</h3>
+                  <!-- Post List -->
+                  <ul>
+                    <li>This is an item that does not link.</li>
+                    <li><a href="#">An example of an item with really, really long text.</a></li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+            <!-- Tag List -->
+            <section class="tag-list">
+              <div class="container">
+                <!-- Module Title -->
+                <h1 class="module-title">Tag List</h1>
+                <!-- Tag Group -->
+                <div class="tag-group">
+                  <!-- Tag -->
+                  <a href="#">Tag Item</a>
+                  <!-- Tag -->
+                  <a href="#">Tag Item</a>
+                  <!-- Tag -->
+                  <a href="#" style="font-size: 2.25rem;">Tag Item</a>
+                  <!-- Tag -->
+                  <a href="#">Tag Item</a>
+                  <!-- Tag -->
+                  <a href="#" style="font-size: 1.5rem;">Tag Item</a>
+                </div>
+              </div>
+            </section>
+            <!-- Sidebar Posts -->
+          <section class="sidebar-posts">
+            <div class="container">
+              <!-- Module Title -->
+              <h1 class="module-title">Sidebar Posts</h1>
+              <!-- Post -->
+              <article class="cq content-post">
+                <div class="post-wrap">
+                  <!-- Post Content -->
+                  <div class="post-content">
+                    <!-- Post Title -->
+                    <h2 class="post-title"><a href="#">Sidebar Content Post</a></h2>
+                    <!-- Post Text -->
+                    <div class="post-text">
+                        Veniam illum aliquid numquam nulla sint! Recusandae, magni, quis, eligendi saepe mollitia nemo excepturi sapilente sequi odio commodi natus praesentium similique nostrum 185 characters.
+                      <ul>
+                        <li><a href="#">This is a content post list item.</a></li>
+                        <li><a href="#">This is a content post list item.</a></li>
+                      </ul>
+                    </div>
+                    <!-- Button Group -->
+                    <div class="cq button-group">  
+                       <a class="btn-primary" href="#">Primary</a>
+                       <a class="btn-secondary" href="#">Secondary</a>
+                    </div>                    
+                  </div>
+                  <!-- Post Media -->
+                  <div class="post-media">
+                    <!-- Image -->
+                    <figure>
+                      <a href="#">
+                        <picture>
+                          <img data-srcset="http://placehold.it/1400x788/CCCCCC?text=16:9+image" alt="">
+                        </picture>
+                      </a>
+                      <noscript>
+                        <a href="#">
+                        <img src="http://placehold.it/1400x788/CCCCCC?text=16:9+image" alt="">
+                        </a>
+                      </noscript>
+                      <!-- Image Caption -->		         
+                      <a href="#">
+                        <figcaption>
+                          <p class="image-caption">Default Caption</p>
+                        </figcaption>
+                      </a>
+                    </figure>
+                  </div>
+                </div>
+              </article>
+              <!-- Post -->
+              <article class="cq content-post">
+                <div class="post-wrap">
+                  <!-- Post Content -->
+                  <div class="post-content">
+                    <!-- Post Title -->
+                    <h2 class="post-title"><a href="#">Sidebar Content Post</a></h2>
+                    <!-- Post Text -->
+                    <div class="post-text">
+                      Ipsa debitis tempore hic quisquam soluta non ab optio doloribus deserunt consectetur. Cumque, voluptatem, cupiditate, eum, neque ea deserunt quis odio nulla non nobis per 185 characters.
+                      <ul>
+                        <li><a href="#">This is a content post list item.</a></li>
+                        <li><a href="#">This is a content post list item.</a></li>
+                      </ul>
+                    </div>
+                    <!-- Button Group -->
+                    <div class="cq button-group">  
+                       <a class="btn-primary" href="#">Primary</a>
+                       <a class="btn-secondary" href="#">Secondary</a>
+                    </div>                    
+                  </div>
+                  <!-- Post Media -->
+                  <div class="post-media">
+                    <!-- Image -->
+                    <figure>
+                      <a href="#">
+                        <picture>
+                          <img data-srcset="http://placehold.it/1400x788/CCCCCC?text=16:9+image" alt="">
+                        </picture>
+                      </a>
+                      <noscript>
+                        <a href="#">
+                        <img src="http://placehold.it/1400x788/CCCCCC?text=16:9+image" alt="">
+                        </a>
+                      </noscript>
+                      <!-- Image Caption -->		         
+                      <a href="#">
+                        <figcaption>
+                          <p class="image-caption">Default Caption</p>
+                        </figcaption>
+                      </a>
+                    </figure>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </section>
+          </aside>
+        </div>
+      </main>
+      <!-- FOOTER -->           
+      <footer class="site-footer" role="contentinfo">
+        <div class="container">
+          <!-- Footer Logo -->
+          <div class="footer-logo">
+            <a href="index.html">LOGO</a>                
+          </div>
+          <!-- Footer Nav -->
+          <nav class="footer-nav" role="navigation">
+            <a href="#">Footer Nav</a>
+            <a href="#">Footer Nav</a>
+            <a href="#">Footer Nav</a>
+            <a href="#">Footer Nav</a>
+          </nav>
+          <!-- Footer Contact Bar -->
+          <div class="footer-contact-bar">
+            <!-- copyright -->
+            <div class="footer-contact-links">
+              <a href="#"><i class="icon-envelope-alt"></i> Email</a>                  
+              <a href="tel:8881234567"><i class="icon-mobile"></i> 888.123.4567</a>
+              <a href="#"><i class="icon-flag"></i> Location</a>
+              <a href="#"><i class="icon-clock-1"></i> Services</a>
+            </div>
+            <!-- footer icons -->
+            <div class="footer-icons">
+              <a class="icon-facebook-circled" href="#"><span class="sr-only">Like Us On Facebook</span></a>
+              <a class="icon-twitter-circled" href="#"><span class="sr-only">Follow Us On Twitter</span></a>
+              <a class="icon-pinterest-circled" href="#"><span class="sr-only">Follow Us On Pinterest</span></a>
+              <a class="icon-play-circled" href="#"><span class="sr-only">Follow Us On YouTube</span></a>
+            </div>
+          </div>
+          <a class="footer-copyright" href="#">&copy; 2015 ThemeName</a>
+        </div>
+      </footer> 		  
+	  </div>  		  
+	  
+    <!-- Dependencies -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="http://cdn.kyamedia.com/js/libs/jquery.2.1.4.min.js"><\/script>')</script>
+    <!-- Core Scripts -->
+    <script src="http://cdn.kyamedia.com/js/min/core.min.js"></script>
+    <!-- Theme Scripts -->
+		<script src="CMSScripts/Custom/ThemeName/theme.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+section[class*="-zone"] {
+/*
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+*/
+  
+  & > div,
+  & > * {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem; 
+  }  
+}
+
+.temp {
+  
+  .site-header {
+    text-align: center; 
+  }
+  
+  .header-nav {  
+    height: auto; 
+    float: none;
+    text-align: center;   
+    width: auto;  
+     a {
+      padding-top: 0; 
+      padding-bottom: 0;
+        
+    }
+  }
+  
+  .soc-media-icons {
+    
+    
+  }
+  
+  .search-bar {
+    max-width: 100%;  
+  }
+  
+  
+  .site-logo {
+    margin-bottom: 0; 
+  }
+  
+  
+  .main-nav {
+   
+  }
+  
+  
+  .nav-collapse {
+    text-align: left;
+    width: 100%;  
+  }
+  
+  
+}
