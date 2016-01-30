@@ -27,10 +27,6 @@
 	&:active {
   	
 	}
-	&:empty,
-	&:empty:not(input) {
-  	display: none;  
-	}
 	// 375
 	@media (min-width: 375px) {
   	max-width: 15em; 
@@ -120,6 +116,14 @@
 [class*="btn"] {
   @include button;
 }
+
+a[class*="btn"],
+button[class*="btn"] {
+  &:empty {
+  	display: none;  
+	}
+}
+
 
 // Button Sizes
 

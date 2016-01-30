@@ -115,7 +115,10 @@
 // Contact Panel Info Post
 
 .contact-panel-info {
-  //@extend .contact-panel;
+  padding-top: 2.5em;
+  padding-bottom: 2.5em;
+  padding-top: 3vmax;
+  padding-bottom: 3vmax;
   // 992
   @media (min-width: $break-md-screen) {
     .post-content {
@@ -133,14 +136,17 @@
 // Contact Panel w/ Map
 
 .contact-panel-map {
-  //@extend .contact-panel;
+  padding-top: 2.5em;
+  padding-bottom: 2.5em;
+  padding-top: 3vmax;
+  padding-bottom: 3vmax;
   .post-content,
   .post-media {
     padding: 0;  
     width: 100%; 
   }
-  .google-map {
-    padding: 0; 
+  .map-embed {
+    padding-bottom: 50%; 
   }
   .qc-form {
     padding-top: 0; 
@@ -149,21 +155,43 @@
     position: relative;
     bottom: auto;   
   }
+  
+  // 540
+  @media (min-width: $break-md-phone) {
+    .post-wrap {
+      flex-flow: row wrap;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+  }
+  
   // 540 ~ 667
-  @media (min-width: $break-md-phone) and (max-width: $break-ml-phone) {       
-    .post-media > div:nth-child(1),
-    .post-media > div:nth-child(2) {
-      display: table-cell;
+  @media (min-width: $break-md-phone) and (max-width: $break-ml-phone) {
+    
+    .post-media {
+      display: flex;
+      flex-flow: row wrap;
+      padding-top: 1.5em; 
     }
      .contact-info {
-      padding-bottom: 5%;
-      padding-left: 2%;
-      vertical-align: middle; 
-      width: 40%;   
-    }
-    .google-map {
+      order: 3;
       padding-left: 5%; 
-      width: 55%; 
+      width: 55%;   
+    }
+    .map-embed {
+      order: 2; 
+      width: 45%; 
+    }
+  }
+  // 667
+  @media (min-width: $break-ml-phone) {
+    .post-content { 
+      padding-right: 5%;
+      padding-left: 0;
+      width: 55%;    
+    }
+    .post-media {
+      width: 45%;  
     }
   }
   // 768

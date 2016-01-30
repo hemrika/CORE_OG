@@ -164,13 +164,18 @@
     }
     [class*="btn"] {
       display: block;
-      margin: 0;
-      max-width: 100%;    
+      margin: 0;    
       width: 100%;      
     }
     .submit-input {
       text-align: left;
     }    
+  }
+  // 480
+  @media (min-width: $break-sm-phone) {
+    [class*="btn"] {
+      max-width: 10em;   
+    }
   }
   // 992
   @media (min-width: $break-md-screen) {

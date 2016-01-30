@@ -43,13 +43,6 @@
     padding: {
       left: 0.25em;
     }
-    & > li:before {
-      content: "\e81b"; // caret rt
-      font-family:  $font-icon;
-      font-size: 0.938em; 
-      margin-right: 0.5em;
-      vertical-align: top;
-    }
   }
 }
 
@@ -64,8 +57,23 @@
     	top: 0.5rem;
     }
   }
+  ol,
   ul {
     @include post-list;
+  }
+  
+  ul {
+    & > li:before {
+      content: "\e81b"; // caret rt
+      font-family:  $font-icon;
+      font-size: 0.938em; 
+      margin-right: 0.5em;
+      vertical-align: top;
+    }
+  }
+  span,
+  strong {
+    
   }
 }
 
@@ -218,7 +226,8 @@
 // Post Media
 
 .post-media {
-  flex-flow: row wrap;
+  // display: flex;
+  // flex-flow: row wrap;
   margin-bottom: 1em; 
   width: 100%;
   figure {
