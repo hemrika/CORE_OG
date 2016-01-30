@@ -148,9 +148,6 @@
   .map-embed {
     padding-bottom: 50%; 
   }
-  .qc-form {
-    padding-top: 0; 
-  }
   .soc-media-links {
     position: relative;
     bottom: auto;   
@@ -194,16 +191,6 @@
       width: 45%;  
     }
   }
-  // 768
-  @media (min-width: $break-ml-phone) {
-    .post-content {
-      padding-right: 5%;  
-      width: 55%; 
-    }
-    .post-media {
-      width: 45%; 
-    }
-  }
   // 992
   @media (min-width: $break-md-screen) {
     .post-content {
@@ -215,11 +202,6 @@
     }
     .qc-form {
       display: block;
-    }
-    .google-map {
-      iframe {
-        height: 425px;  
-      }
     }
   }
 }
