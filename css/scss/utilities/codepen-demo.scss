@@ -1,0 +1,153 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+// icon defaults
+
+.icon {
+  display: inline-block;
+  fill: currentColor;
+  height: 1em;
+  width: 1em;   
+  vertical-align: middle;
+  position: relative;
+  top: -.0625em;
+  margin-right: 0.25em;
+  margin-left: 0.25em;   
+  text-align: center;  
+}
+
+// demo wrap
+
+.demo-wrap {
+  height: 100vh;
+  margin: 0 auto;
+  padding: 1em;
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+  width: 100%;
+  p {
+    font-size: 1.125rem;
+    margin: {
+      top: 0;
+      right: auto;
+      bottom: 1em;
+      left: auto;
+    }
+  }
+  a {
+    text-decoration: none;
+  }
+  code {
+  //background: rgba(darkGrey, .2);
+    color: #CCC;
+    border-radius: 5px;
+    margin: {
+      right: .25em;
+      left: .25em;
+    }
+    word-break: break-word;
+    //padding: .5em;
+  }
+}
+
+// demo title
+
+.demo-title {
+  @include neon-text;
+  margin: 0 auto .5em;
+  font: {
+    width: 400;
+    size: 5em;
+    family: 'Pacifico', sans-serif;
+  }
+  line-height: 1.2;
+  .kern {
+    margin-left: -.125em;
+  }
+  .spacer {
+    padding: 0 .1em;
+  }
+}
+
+// demo description (what it do)
+
+.demo-description {
+  color: darken($hot-pink, 15%);
+  margin-bottom: 5px;
+  em {
+    color: $hot-pink;
+  }
+}
+
+// disclaimer (caveats or warnings or important info)
+
+.disclaimer {
+  color: darken($hot-pink, 10%);
+  color: #888;
+  color: darken($hot-pink, 10%);
+  font-size: 1rem;
+  margin-top: 0;
+  //max-width: 40em;
+  code {
+    display: block;
+    font-size: 1.125em;
+    margin-top: 1em;
+    margin-bottom: 2em;
+  }
+}
+
+// credit to original author or other reference
+
+
+// info button
+
+.info-button {
+  background: none;
+  border: none;
+  color: #FFF;
+  height: 40px;
+  width: 40px;
+  outline: 0;
+  opacity: .4;
+  padding: 0;
+  position: absolute;
+  bottom: 15px;
+  right: 5px;
+  z-index: 2;
+  transition: all .3s cubic-bezier(.55,.26,.5,.81);
+  svg {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    top: 0;
+    transition: all .3s cubic-bezier(.55,.26,.5,.81);
+  }
+  .link {
+    margin-left: 0;
+  }
+  .cancel {
+    float: left;
+    opacity: 0;
+    //margin-left: -3em;
+  }
+  &.active {
+    opacity: 1;
+    .link {
+      float: right;
+      margin-right: -4em;
+      opacity: 0;
+    }
+    .cancel {
+      //background: #FFF;
+      border-radius: 100%;
+      fill: darkRed;
+      margin-top: -75px;
+      margin-left: 0;
+      opacity: 1;
+    }
+  }
+}

@@ -1,6 +1,14 @@
+.searchBox,
 .search-bar {
-	input[type="text"] {
+  display: inline-block;
+  margin-right: auto;
+  margin-left: auto;   
+  
+  // inputs
+	input[type="text"],
+	input[type="search"] {
 		border-radius: 0;
+		border-right: none;
 		color: #222;
 		display: inline-block;
 		height: 36px; 
@@ -8,32 +16,39 @@
 		vertical-align: middle; 
 		width: 80%;			
 	}
-	input[type="submit"],
-	input[type="submit"]%btn {
-		background: url("../images/UI/icon-search-dark.svg") no-repeat center #CCC;
-		background-size: 40%;
-		border-radius: 0;
-		color: inherit;
-	  display: inline-block;
-		font: {
+	
+	// submit button
+	input[type="submit"] {
+  	background: url("../images/UI/icon-search-dark.svg") no-repeat center #CCC;
+  	background-size: 35%;
+  	border-radius: 0;
+  	color: inherit;
+    display: inline-block;
+  	font: {
   		weight: normal;
   		size: 16px;
     }
     line-height: 1.2;
-		height: 36px; 
-		padding: 0.5em 0.313em;
-		text-shadow: none;
-		vertical-align: middle;   
-		width: 20%;
-		@include hide-text;
-		&:hover,
-		&:focus {
-  		background-color: tint(black, 30%);
-  		box-shadow: none;
-		}	
+  	height: 36px; 
+    width: 20%; 
+  	padding: 0;
+  	text-shadow: none;
+  	vertical-align: middle; 
+  	@include hide-text; 
 	}
-	// 667
-	@media (min-width: $break-ml-phone) {
+	
+	// 480
+	@media (min-width: $break-sm-phone) {
 		max-width: 300px;
+		
+		input[type="text"],
+  	input[type="search"] {
+    	width: 75%; 
+  	}
+  	
+  	input[type="submit"] {
+    	width: 25%; 
+  	}
+  	
 	}
 }

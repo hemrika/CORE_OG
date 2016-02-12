@@ -11,11 +11,14 @@
   @media (min-width: $break-ml-phone) {
     
   }
+  
+  // Demo Styles
   &.demo {
     .flexbox & {
       flex-flow: row wrap;
       .col {
         flex-grow: 0;
+        padding: 0.5em;  
         figure {
           margin-bottom: 0; 
         }

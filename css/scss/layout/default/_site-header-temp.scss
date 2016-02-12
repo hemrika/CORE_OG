@@ -1,3 +1,198 @@
+// Header Nav
+
+.header-nav {
+  margin: 0 auto;    
+	text-align: center; 
+	a {
+  	display: inline-block;  
+		font: {
+  		size: 0.875em;
+    }  
+	  margin-bottom: 0;
+	  padding-right: 5px;
+	  padding-bottom: 5px;  
+	  padding-left: 5px;
+    &:last-child {
+      padding-bottom: 0;  
+    }
+    [class*="icon"] {
+      display: none;  
+    	&:before {
+      	margin-right: 0.2em; 
+    	}
+  	}
+  	&.location-name {
+    	[class*="icon"] {
+      	&:before {
+        	// margin-right: 0; 
+      	}
+    	}
+  	}
+  	.icon-heart:before,
+    .icon-heart-1:before {
+      color: inherit;
+    }  
+	}
+	.no-flexbox & {
+  	display: block;  
+	}		
+}
+
+// Header Search
+
+.header-search {
+  margin: 0 auto; 
+  padding-top: 0.5em;  
+  width: 100%;  
+  .soc-media-icons,
+  .search-bar {
+    display: inline-block;
+    vertical-align: middle;     
+  }
+ .soc-media-icons {
+   display: none; 
+   height: 36px;
+   margin-bottom: 0.5em;   
+   text-align: center;  
+   width: 100%;
+		a[class*="icon"] {
+  		font-size: 1.5em; 
+  		margin-right: 3%;
+  		margin-left: 3%; 
+  		width: auto;
+  		&:before {
+    		line-height: 36px; 
+  		}   
+		} 	
+	}
+	.search-bar { 
+    width: 100%;
+    input[type="text"],
+    input[type="submit"] {
+      display: inline-block;
+      line-height: 1;  
+      float: left;
+      height: 36px;      
+    }
+  } 
+}
+
+// 320
+@media (min-width: $break-tiny-phone) {
+  .header-navbar {
+  	.container {
+  	  padding-right: 1em;
+  	  padding-left: 1em;
+  	}   
+	}
+  .header-nav { 
+	  a { 
+  	  padding-right: 3%; 
+  	  padding-bottom: 0;
+  	  padding-left: 3%;
+  	  width: auto;
+  	  [class*="icon"] {
+    	  display: inline;
+  	  }      
+	  }
+	}
+  .header-search {
+    text-align: center; 
+    .soc-media-icons {
+      display: inline-block;
+      margin-bottom: 0;      
+		  width: 25%;
+		  a[class*="icon"] {
+  		  margin-top: 9px;  
+		  }
+		}
+		.search-bar { 
+  		width: 72%; 
+		}
+  }
+}
+
+// 480
+@media (min-width: $break-sm-phone) {
+  .header-navbar {
+  	.container {
+  	  padding-right: 1em;
+  	  padding-left: 1em;
+  	}   
+	}
+  .header-search {
+    padding-top: 0.75em;
+    width: 80%;
+    .soc-media-icons {
+      display: inline-block;
+      margin-bottom: 0;
+		  a[class*="icon"] {
+  		  margin-top: 0;  
+		  }
+		}     
+  } 
+}
+
+// 540
+@media (min-width: $break-md-phone) {
+  .header-navbar {
+    padding-top: 0.75em;
+    padding-bottom: 0;  
+  }
+  .header-nav {
+    height: 36px;
+    float: left;  
+    text-align: left; 
+    width: 50%;
+    a {
+      padding-top: 0.438em; 
+      padding-left: 0;  
+      vertical-align: sub;  
+    }
+  }
+  .header-search {
+    float: right; 
+    padding-top: 0;
+    text-align: right;
+    max-width: 18.75em;  
+    width: 50%;
+    .soc-media-icons {
+      height: 36px;
+      max-width: 4.375em;    
+      width: 28%;
+      a[class*="icon"] {
+        float: left;    
+        width: auto;
+	    }	
+	  }
+    .search-bar {       
+      width: 70%;
+    }     
+  } 
+}
+
+// 768
+@media (min-width: $break-lg-phone) {
+  .header-nav { 
+	  a {
+  	  font-size: 0.875em;
+    }
+  } 
+}
+
+// 900
+@media (min-width: $break-900) {
+  .header-navbar {
+  	.container {
+  	  padding-right: 1.5em;
+  	  padding-left: 1.5em;
+  	}   
+	}
+}
+
+
+
+
 section[class*="-zone"] {
 /*
   padding-top: 0.5em;
@@ -32,8 +227,14 @@ section[class*="-zone"] {
   }
   
   .soc-media-icons {
-    
-    
+    display: inline-block;
+    a {
+      flex-grow: 1;
+    }
+    .icon {
+      height: 40px;
+      width: 40px;
+    }
   }
   
   .search-bar {
@@ -57,4 +258,50 @@ section[class*="-zone"] {
   }
   
   
+}
+
+
+.header-nav {
+  a {
+    padding: 0 0.25em;  
+  }
+}
+
+.icon {
+  display: inline-block;
+  fill: currentColor;
+  height: 1em;
+  width: 1em;   
+  vertical-align: middle;
+  position: relative;
+  top: -.0625em;
+  margin-right: 0.25em;
+  margin-left: 0.25em;   
+  text-align: center;  
+}
+
+// Icon directions. Used mostly for arrows
+
+.dir-right {
+  transform: rotate(180deg);
+}
+
+.dir-up {
+  transform: rotate(90deg);
+}
+
+.dir-down {
+  transform: rotate(-90deg);
+}
+
+
+.footer-icons {
+  a,
+  svg {
+    height: 40px;
+    width: 40px;
+  }
+  .icon {
+    fill: red;
+  }
 }

@@ -1,29 +1,14 @@
+// Main Nav
+
 .main-nav {
-	padding-top: 1em;
-	padding-bottom: 1em;     
+  padding-top: 0;
+  padding-bottom: 0;       
 	position: relative;
 	z-index: 2;
 	.container,
 	nav {
   	display: inline-block;  
 		position: relative;     
-  }
-  .no-flexbox & {
-    .container {
-      @include clearfix;
-    }
-    .site-logo {
-      display: inline-block;  
-    }
-    .nav-toggle {
-      float: right; 
-    }
-    // 800
-    @media (min-width: $break-800) {
-      .site-logo {
-        width: 24%; 
-      }
-    }
   }  
 }
 
@@ -31,23 +16,25 @@
 
 .site-logo {
   display: inline-block;  
-  font-size: 2em;    
+  font-size: 2em;
+  line-height: 40px;      
   margin: { 
     right: auto;
-    bottom: 0.5em;
+    bottom: 0;
     left: auto; 
-  }  
+  }
+  padding-top: 0;
+  padding-bottom: .313em;   
+  position: relative;   
   text-align: center;    
 	width: 100%;
+	z-index: 3; 
 	a {
   	width: 100%;  
 	}
 	img {
   	
   } 
-	.no-flexbox & {
-  	display: inline-block; 
-	}
 }
 
 // Multi Level Nav
@@ -80,6 +67,7 @@
   }
   
   .dropdown-toggle {
+    background-color: transparent;
     content: "";
     font-family: $font-icon;
     height: 48px;
@@ -119,47 +107,43 @@
 
 // Site Nav
 
-.nav-collapse {    
-   //align-self: center; 
-   max-height: 0;
-   overflow: hidden;    
-	 //flex: 1 0 100%;
-	 list-style: none;  
-	 width: 100%; 	
-	 & > ul {
+.nav-collapse {
+  max-height: 0;
+  overflow: hidden;
+  list-style: none;
+  text-align: left;
+  width: 100%; 	
+  & > ul {
     list-style: none;
     padding-top: 1em; 
     width: 100%;
    }
    li {  
   	margin-bottom: 2px; 
-	  width: 100%;
-	  position: relative;
-	  z-index: 1002;		
-	  & > a {  	  
-		  display: inline-block;  
-		  font-size: 0.875em;
-		  padding: 0.85em 0.5em 0.85em 0.7em;
-		  position: relative; 
-		  height: 48px;
-		  line-height: 24px;  	
-		  width: 100%;
-		  text-decoration: none;
-		  transition: background 0.4s ease, 
-		              color 0.4s ease, 
-		              padding 0.4s ease;
-		  z-index: 1001; 
-		}
-		i:before {
-  		line-height: 0.8; 
-		}
-		&:last-child {
+    width: 100%;
+    position: relative;
+    z-index: 1002;		
+    & > a {  	  
+  	  display: inline-block;  
+  	  font-size: 0.875em;
+  	  padding: 0.85em 0.5em 0.85em 0.7em;
+  	  position: relative; 
+  	  height: 48px;
+  	  line-height: 24px;  	
+  	  width: 100%;
+  	  text-decoration: none;
+  	  transition: background 0.4s ease, 
+  	              color 0.4s ease, 
+  	              padding 0.4s ease;
+  	  z-index: 1001; 
+  	}
+  	&:last-child {
   		margin-bottom: 0; 
-		}
+  	}
   }
   li.dropdown {
-		z-index: 1001; 
-	}
+  	z-index: 1001; 
+  }
 	// Submenu
   .sub-menu {
     padding-top: 0; 
@@ -223,7 +207,7 @@
   text-shadow: none;
   text-indent: -999px;
   user-select: none;
-  max-width: 15em; 
+  max-width: 100px; 
   margin-right: auto;
   margin-left: auto;  
   width: 100%; 
@@ -253,17 +237,6 @@
     transition: background 300ms ease;
     -webkit-font-smoothing: subpixel-antialiased;	
   }
-  // 320
-  @media (min-width: $break-tiny-phone) {
-    flex: 1;
-    align-self: center;
-    margin-right: 0;
-    margin-left: auto; 
-    max-width: 6em;
-    &:before {
-      font-size: 1em;  
-    } 
-  }
 }
 
 // Nav Toggle Active
@@ -279,43 +252,51 @@
     height: 40px; 		
     text-shadow: none;
   }
-  // 320
-  @media (min-width: $break-tiny-phone) { 
-    width: 50px;  
-  }
 }
 
 
 // 320
 @media (min-width: $break-tiny-phone) {
   .main-nav {
-    .container {
-      display: flex;
-  		align-items: center;
-  		flex-flow: row wrap;
-  		justify-content: space-between;
-    }
+    flex: 1 0 100%;
+    margin-top: -40px;   
   }
+  
   .site-logo {
-    //display: flex;
-    flex:1;
-    align-items: center;
-    justify-content: flex-start;
-    text-align: left;
-    margin: 0;
-    padding-top: 0; 
+    flex: 0 1 auto; 
+    margin-bottom: 0;
+    margin-left: 0; 
+    padding-top: 0;
+    padding-bottom: 0;
+    text-align: left; 
     width: auto; 
 	}
+	
+	.nav-toggle {
+  	flex: 1 0 auto;
+    align-self: center; 
+    margin-right: 0;
+    margin-left: auto; 
+    max-width: 75px;
+    &:before {
+      font-size: 1em;   
+    }
+	}
+
 }
 
 // 800
 @media (min-width: $break-800) {
+  
+  .site-logo {
+    flex: 1 0 auto 
+  }
+  
   .main-nav {
-    padding-top: 1.5em;
-    padding-bottom: 1.5em;     
+    flex: 3 0 auto;
+    margin-top: 0;      
   }
-  .site-logo { 
-  }
+  
   .nav-toggle {
     display: none !important;  
   }  
@@ -324,13 +305,12 @@
 
 
 // Show Nav @ 800 
-@media (min-width: $break-800) {  
-      
+@media (min-width: $break-800) {
+     
   .js-nav .nav-collapse,
   .nav-collapse {
     display: inline-block;  
     display: flex;
-    flex: 3;
     max-height: 100%;
     height: auto;
     overflow: visible;
@@ -338,6 +318,9 @@
   .nav-toggle {
     display: none;
   }
+  .dropdown-toggle {
+		display: none;  
+	}
   .dropdown ul ul {
     border: 0;
     padding: 0;
@@ -357,14 +340,18 @@
 		  flex-grow: 1;
 		  margin-bottom: 0; 
 	    width: auto;
+	    .icon {
+    		height: 20px;
+    		width: 20px;   
+    	}
 		  & > a {			  
 		    margin: 0;
 		    padding-top: 0;
 		    padding-right: 0;
 		    padding-bottom: 0;
 		    padding-left: 0;
-		    font-size: 1em; 
-		    line-height: 1;
+		    font-size: .875em; 
+		    line-height: 20px;
 		    height: auto; 	
 		    text-align: right;
 		    position: relative;
@@ -373,9 +360,6 @@
 		    z-index: 1001;
 		  }
 		  // link icon
-		  i {
-			  display: none;
-		  }
 	  }
 	  
 	  // Sub Menu
@@ -401,11 +385,11 @@
 			  z-index: 1000;  				  
 				& > a {	
 					display: block;
-					font-size: 0.875em;
-					font-size: 0.875rem;  
+					font-size: .875em;
+					font-size: .875rem;  
 					height: auto;  
 					text-align: left;					
-					padding: 0.7em 1em;
+					padding: .7em 1em;
 					visibility: visible;	
 				}				
 			}
@@ -470,14 +454,14 @@
     		//z-index: 1002;
   		}
   		.dropdown-toggle {
-    		display: none;  
+    		//display: none;  
   		}
 			& > a:after {
-			  content: '\e818';
-        font-family: $font-icon;
-        font-size: 0.875em;
-        padding-left: 0.5em;
-        width: 0.938em;	
+			  //content: '\e818';
+        //font-family: $font-icon;
+        //font-size: 0.875em;
+        //padding-left: 0.5em;
+        //width: 0.938em;	
 			}
 		}
 		
@@ -501,16 +485,16 @@
         //text-align: right;  
         //width: auto;
         // default style
-        content: '\e818';
-        display: table-cell;
-        font-family: $font-icon;
-        font-size: 0.875em;
-        padding-left: 0.5em;
-        width: 0.938em;	
+        //content: '\e818';
+        //display: table-cell;
+        //font-family: $font-icon;
+        //font-size: 0.875em;
+        //padding-left: 0.5em;
+        //width: 0.938em;	
 			}
 			&.focus-nav {
   			& > a:after {
-  			  content: '\e804';
+  			  //content: '\e804';
   		  }
 			}
 		}
@@ -540,27 +524,70 @@
 				overflow: visible;  
 			}
 		}
-		
-		
-		.no-flexbox & {
-    	display: inline-block;
-    	text-align: right; 
-    	width: 75%;  
+	}  
+}
+
+ // fallbacks
+ 
+.no-flexbox {
+   
+  .site-logo
+  .main-nav {
+    display: inline-block; 
+  }
+  
+  // 320
+  @media (min-width: $break-tiny-phone) {
+    .site-logo {
+      float: left;  
+      text-align: left; 
+    }
+    .main-nav {
+      float: right; 
+      text-align: right;    
+      width: 100%;   
+    }
+    .nav-toggle {
+      float: right; 
+      margin: 0;  
+    }  
+  }
+  
+  // 800
+  @media (min-width: $break-800) {
+    
+    .site-logo {
+      line-height: 30px;  
+      width: 15%; 
+    }
+    
+    .main-nav {
+      line-height: 30px;  
+      width: 85%; 
+    }
+    
+    .nav-collapse {
+    	display: inline-block; 
     	@include clearfix;
     	& > ul {
-      	display: inline-block;  
+      	display: inline-block;
+      	float: right;   
       	width: auto;
       	& > li {
          	float: left;
-         	margin-left: 3em;
+         	margin-left: 2em;
+         	// 900
+         	@media (min-width: $break-900) {
+           	margin-left: 3em;  
+         	}
          	// 1200
          	@media (min-width: $break-lg-screen) {
-           	margin-left: 5em;  
+           	margin-left: 4em;  
          	} 
       	}     
-    	}
-    	 
-  	}
-	}  
+    	}      	 
+  	}  	
+  }   
+   
 }
 

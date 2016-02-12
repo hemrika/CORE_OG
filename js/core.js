@@ -886,15 +886,15 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
 // ******************************* SCRIPTS *******************************//
 
 // init Elementary.js
-window.addEventListener( "load", window.elementary, false );
-window.addEventListener( "resize", window.elementary, false ); 
+window.addEventListener( 'load', window.elementary, false );
+window.addEventListener( 'resize', window.elementary, false ); 
 
 // Lazyload Images
 // https://github.com/aFarkas/lazysizes
 
 window.lazySizesConfig = window.lazySizesConfig || {};
 window.lazySizesConfig.loadMode = 1;
-$("figure img, figure, figcaption, .media-wrap, .media-wrap iframe").addClass("lazyload");
+$('figure img, figure, figcaption, .media-wrap, .media-wrap iframe').addClass('lazyload');
 
 /*! Tablesaw - v2.0.1 - 2015-10-09
 * https://github.com/filamentgroup/tablesaw
@@ -905,19 +905,33 @@ $("figure img, figure, figcaption, .media-wrap, .media-wrap iframe").addClass("l
 	// Many plugins bind to an "enhance" event to init themselves on dom ready, or when new markup is inserted into the DOM
 	
   $( function(){
-  	$( document ).trigger( "enhance.tablesaw" );
+  	$( document ).trigger( 'enhance.tablesaw' );
   });
 
 })( jQuery );
 
 $(document).ready(function() {
   
+/*
+$.get("images/icons/icon-sprite.svg", function(data) {
+  var div = document.createElement("div");
+  div.innerHTML = new XMLSerializer().serializeToString(data.documentElement);
+  document.body.insertBefore(div, document.body.childNodes[0]);
+});
+*/
+
+  
   // SVG fallback
   if (!Modernizr.svg) {
-  	$("img[src$='.svg']").attr("src", ".png");
+  	$('img[src$=".svg"]').attr('src', '.png');
   }
   
-  $('.search-bar input[type="submit"]').removeAttr('class');
+  $('.searchBox input[type="text"]').removeAttr('type').attr('type' , 'search');
+  $('.searchBox input[type="submit"]').removeAttr('class');
+  
+  
+  
+  $('.searchBox').removeClass('searchBox').addClass('search-bar').attr('role' , 'search');
   
   // Flickity PACKAGED v1.1.0 http://flickity.metafizzy.co
   $('.full-width-slider .gallery').flickity({
@@ -970,8 +984,8 @@ $(document).ready(function() {
     });
     
     
-    $(".tab-slider .gallery-cell").each(function(){
-      $(".tab-slider .button-group").append("<a href='javascript:void(0);' class='btn-txt'>"+$(this).data("name")+"</a>");
+    $('.tab-slider .gallery-cell').each(function(){
+      $(".tab-slider .button-group").append('<a href="javascript:void(0);" class="btn-txt">'+$(this).data('name')+'</a>');
     });
     
     // added Flickity class to make .gallery-cell 100% tall.
@@ -1027,16 +1041,16 @@ $(document).ready(function() {
   
   // Kentico class resets
   
-  $(".PagerResults").removeAttr("style");
-  $(".PagerControl").toggleClass("PagerControl").addClass("pager-control");
-	$(".PagerNumberArea").toggleClass("PagerNumberArea").addClass("pager-number-area");
-	$(".PagerResults").toggleClass("PagerResults").addClass("pager-results");
-	$(".SelectedPrev").toggleClass("SelectedPrev").addClass("selected-prev");
-	$(".SelectedPage").toggleClass("SelectedPage").addClass("selected-page");
-	$(".UnselectedPage").toggleClass("UnselectedPage").addClass("unselected-page");
-	$(".UnselectedNext").toggleClass("UnselectedNext").addClass("unselected-next");
+  $('.PagerResults').removeAttr('style');
+  $('.PagerControl').toggleClass('PagerControl').addClass('pager-control');
+	$('.PagerNumberArea').toggleClass('PagerNumberArea').addClass('pager-number-area');
+	$('.PagerResults').toggleClass('PagerResults').addClass('pager-results');
+	$('.SelectedPrev').toggleClass('SelectedPrev').addClass('selected-prev');
+	$('.SelectedPage').toggleClass('SelectedPage').addClass('selected-page');
+	$('.UnselectedPage').toggleClass('UnselectedPage').addClass('unselected-page');
+	$('.UnselectedNext').toggleClass('UnselectedNext').addClass('unselected-next');
 	
-	$(".testy .pager-number-area > span").addClass("pager-numbers");
+	$('.testy .pager-number-area > span').addClass('pager-numbers');
 	
 /*
 	$(".dropdown").click(function() {

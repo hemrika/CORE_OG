@@ -22,7 +22,7 @@ html::-webkit-scrollbar-thumb {
 html,
 body,
 body > form {
-  height: 100% !important; 
+  //height: 100% !important; 
 }
 
 // Container - use .container in markup or use the "@include container;" mixin to wrap content or sections
@@ -34,6 +34,28 @@ section {
 section.bg-repeat {
   @include panel-bg-repeat
   
+}
+
+// zone layout
+
+[class*="-zone"] {
+  .container {
+    @include clearfix;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    padding-top: .75em;
+    padding-bottom: .75em; 
+  }
+ 
+  
+/*
+  & > div,
+  & > * {
+    padding-top: .625em;
+    padding-bottom: .625em;  
+  }
+*/  
 }
 
 .container {

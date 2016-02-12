@@ -146,6 +146,7 @@
     width: 100%; 
   }
   .map-embed {
+    height: auto; 
     padding-bottom: 50%; 
   }
   .soc-media-links {
@@ -283,12 +284,20 @@
     .post-content,
     .post-media {
       width: 100%;  
+    }
+    .post-content {
+      padding-left: 0;  
     }     
     .post-media > div:nth-child(1),
     .post-media > div:nth-child(2) {
       display: block;
-      padding-right: 0; 
       width: 50%;  
+    }
+    .post-media > div:nth-child(1) {
+      padding-left: 0;   
+    }
+    .post-media > div:nth-child(2) {
+      padding-right: 0; 
     } 
   }
   // 992
@@ -299,7 +308,7 @@
       flex-flow: row wrap;
     }
     .post-content {
-      padding-right: 5%;  
+      padding-right: 5%;   
       width: 40%; 
     }
     .post-media {
@@ -320,71 +329,7 @@
   }
 }
 
-// Contact Banner
 
-.contact-banner {
-  background-color: #EEE;
-  padding-top: 1em;
-  padding-bottom: 1em; 
-  .contact-info {
-    @include container;   
-  }
-  address {
-    margin-bottom: 0.5em;
-    padding-bottom: 0;
-    h2 {
-      padding-top: 0; 
-    }
-    br {
-      display: none;  
-    }   
-  }
-  .soc-media-links {
-    position: relative;
-    bottom: auto;  
-    padding-bottom: 0;
-  } 
-  // 600
-  @media (min-width: 600px) {
-    .contact-info {
-      display: flex;
-      align-items: center;
-      padding-bottom: 0;  
-      width: 100%;  
-    }
-    address {
-      margin-bottom: 0;
-      padding-bottom: 0;
-      text-align: left;   
-      width: 77%; 
-    }
-    .soc-media-links {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      text-align: right;  
-      vertical-align: middle;
-      width: 23%;  
-    }
-  }
-  // 1200
-  @media (min-width: $break-lg-screen) {
-    address {
-      line-height: 2.5em;   
-      vertical-align: middle;  
-      .sub-header {
-        display: inline;
-        margin-bottom: 0; 
-        padding-right: 0.5em; 
-      }
-    }
-  }
-  // 2000
-	@media (min-width: $break-xxl-screen) {
-  	padding-top: 1.25em;
-  	padding-bottom: 1.25em; 
-	} 
-}
 
 // Newsletter Signup
 

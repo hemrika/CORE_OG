@@ -1,20 +1,3 @@
-.demo {
-  .image-caption {
-    span {
-      display: inline-block;
-      &.right {
-        transform: rotate(90deg);
-      }
-      &.down {
-        transform: rotate(180deg);
-      }
-      &.left {
-        transform: rotate(-90deg);
-      }  
-    }
-  }
-}
-
 figure {
 	line-height: 0;		
 	position: relative;
@@ -30,7 +13,6 @@ figure {
 	}
 }
 
-
 figure:hover {
   .media-caption.lazyloaded {
     opacity: 1;
@@ -40,19 +22,19 @@ figure:hover {
 // Image Caption
 
 figcaption {
-	line-height: 1.2;
-  text-align: left; 
+	line-height: 1.2; 
 	background-color: rgba(0,0,0,0.75);
 	color: #f5f5f5;
 	display: flex;
 	align-items: center;
 	justify-content: center;				
-	height: 40%;
+	height: 30%;
 	overflow: hidden;
 	opacity: 0;
 	bottom: 0;
-	padding: 0.75em 1em;
-	position: absolute;			
+	padding: 1em;
+	position: absolute;
+	text-align: left;			
 	width: 100%;
 	transition: all 0.5s cubic-bezier(.55,.26,.5,.81);
 	p {
@@ -63,13 +45,13 @@ figcaption {
 // Image Caption
 
 .image-caption {
-	align-self: center;		
-	font-size: 1.25em;
+	align-self: center;
+	font-size: 1.125em; 
 	line-height: 1;
 	margin-bottom: 0;
-	text-align: center; 
-	width: 100%;  
+	text-align: center;   
 	transition: all 0.5s ease;
+	width: 100%;
 	a {
 		text-decoration: underline;
 	}
@@ -125,7 +107,16 @@ figcaption {
 
 // Slide Up
 .slide-up {
+  height: 100%; 
 	top: 100%;
+	animation: slide-up-rev 1s cubic-bezier(.59,.01,.52,1) 1;
+  animation-fill-mode: backwards;
+  // Keyframes
+  @keyframes slide-up-rev {
+    0% { height: 30%; top: 70%;}
+    50% { height: 50%; top: 50%; }
+    100% { height: 0; top: 0; }
+  }
 	.image-caption {
 		 
 	}  
@@ -133,7 +124,8 @@ figcaption {
 
 // Slide Down
 .slide-down {
-  top: 0; // use if caption overlay height is 100% 
+  top: 0;
+  height: 100%;  
   .image-caption {
     flex: 1;  
   }
@@ -164,12 +156,6 @@ figure:hover {
 	figcaption {
 		left: 0;
 		opacity: 1;
-	}
-	
-	&.circle-mask {
-  	figcaption {
-    	top: 0; 
-  	}
 	}
 	
 	// show caption
@@ -223,10 +209,22 @@ figure:hover {
 	
 	// Slide Up
 	.slide-up {  	
-	  top: 60%; // difference of default height of 40%
+	  top: 70%; // difference of default height of 40%
+	  height: 30%; // set back to default
 	  // use top: 0; w/ height: 100%; for full-height overlay
 	  //height: 100%;
+	    
 	  bottom: 0;
+/*
+	  animation: slide-up-bg 1s cubic-bezier(.59,.01,.52,1) 1;
+    animation-fill-mode: both;
+    // Keyframes
+    @keyframes slide-up-bg {
+      0% { height: 100%; top: 100%;}
+      50% { height: 50%; top: 50%; }
+      100% { height: 30%; top: 70%; }
+    }
+*/
 	  .image-caption {
 		  animation: slide-up 1s cubic-bezier(.59,.01,.52,1) 1;
       animation-fill-mode: none;
@@ -243,7 +241,8 @@ figure:hover {
 	
 	// Slide Down
 	.slide-down {
-	  top: 60%;
+	  top: 70%;
+	  height: 30%;  
 	  .image-caption {
 		  animation: slide-down 1s cubic-bezier(.59,.01,.52,1) 1;
       animation-fill-mode: none;
@@ -286,9 +285,27 @@ figure:hover {
       }
 	  } 
 	}
+	
+	
+	// Circle Mask	
+	&.circle-mask {  	
+  	// use top: 0; w/ height: 100%; for full-height overlay
+  	.slide-down,
+  	.slide-up {
+    	height: 50%; 
+    	top: 50%;
+  	}  	
+	}	
+	
+	&.rounded-mask {
+  	figcaption {
+  		border-radius: 0 0 15px 15px;
+  	}
+	}	
+	
 }
 
-// Circle Thumbnail
+// Circle Mask
 
 .circle-mask {
 	@include circle-mask;
@@ -297,163 +314,56 @@ figure:hover {
 	}
 	figcaption {
 		@include circle-mask;
-		height: 100%;
-		width: 100%;  
-		display: flex;				
+		height: 40%;  
+		width: 100%;				
 		padding: 0;			
-		justify-content: center;
 		bottom: 0;				
 		//padding: 1em 2em;
 		text-align: center;
+		//display: flex;
+		//justify-content: center;
 		a {
-			display: flex;
+			//display: flex;
 		}
 	}
 	
-	// Figcaption Animations
-  .fade-in,
-	.scale-up,
+	// Figcaption Animations  
+	.slide-down {
+  	height: 100%; 
+	}
+	.slide-down,
 	.slide-left,
 	.slide-right {
-		top: 0; 
+  
 	}
-	.scale-up {
-		.image-caption {
-			 
-		}
-	}
-		
-	// Image Caption
-		
+	
+	// Image Caption		
 	.image-caption {
 		float: none;		
 		text-align: center;	
 	}
-		
-	// 667
-	@media (min-width: $break-ml-phone) {
-  	.image-caption {
-    	font-size: 1.5em; 
-  	}
-		&.md-size {
-			@include circle-mask-md;
-			figcaption {
-				position: absolute;
-				padding: 1.5em 2em 3em;					
-			}	
-			.image-caption {
-				font-size: 1.25em;	
-			}
-		}
-		&.sm-size {
-			@include circle-mask-sm;
-			figcaption {
-				position: absolute;
-				padding: 0.5em 2em 1em;		
-			}
-			.image-caption {
-				font-size: 1em;	
-			}
-		}
-	}
-	// 768
-	@media (min-width: $break-lg-phone) {
-		figcaption {
-			padding: 3em 3em 4em;
-		}
-		.image-caption {
-			//font-size: 2em;	
-		}	
-	}
 }
 
 // Rounded Thumbnail
+
 .rounded-mask {
 	@include rounded-mask;
 	image {
   	border-radius: 15px;
 	}
 	figcaption {
-		border-radius: 15px;
-	}
-	.scale-up,
-	.slide-left {
-	}
-	.slide-left,
-	.slide-up {
-		opacity: 1;
-	}
-	&.sm-size {
-		figcaption {
-			position: absolute;
-		}	
-	}
-	// 667
-	@media (min-width: $break-ml-phone) {
-		.image-caption {
-			font-size: 1.5em;	
-		}
+		//border-radius: 0 0 15px 15px;
 	}
 }	
 	
 // Banner Image
+
 .banner {
 	img {
 		min-width: 100%;  
 	}
 }
-	
-// 480
-@media (min-width: $break-sm-phone) {
-	.image-caption {
-		//font-size: 1.25em;  
-	}
-}
-	
-// 600
-@media (min-width: 600px) {
-	// Figure Sizes
-	.md-size,
-	.sm-size {
-		float:left;
-		margin: 0 0.938em 0.938em 0;			
-	}
-	.md-size {
-		width: 50%;	
-	}
-	.sm-size {
-		width: 30%;
-		figcaption {
-			justify-content: center;
-			position: relative;	
-		.image-caption {
-			float: none;	
-			text-align: center;	
-			}	
-		}	
-	}
-	// Image Caption
-	figcaption {
-		// Scale Up
-		&.scale-up {				
-			.image-caption {
-				
-			}
-			&:hover {
-				.image-caption {
-						
-				}
-			}
-		}
-		// Slide Left
-		&.slide-up,
-		&.slide-left {
-			.image-caption {
-					
-			}
-		}			
-	}		
-}
+
 // 992
 @media (min-width: $break-md-screen) {
 	.md-size {

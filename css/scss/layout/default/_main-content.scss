@@ -2,7 +2,8 @@
   display: flex;
   flex-flow: column;
   min-height: 100%;
-  .IE & {
+  height: 100vh;  
+  .IE10 & {
     height: 100%; 
   } 
 }
@@ -12,26 +13,26 @@
 }
 
 .site-content {
-  flex-grow: 1;
+  flex: 1 0 auto;
   margin: 0 auto;
-  padding-top: 0; 
-  padding-bottom: 2em; 
-  width: 100%;   
-  // 800
-  @media (min-width: $break-800) {    
-    padding-bottom: 0;        
-  } 	
+  width: 100%;    	
 }
 
 // Page Content
 
 .page-content {
   @include container;
+  padding-top: 1.5em; 
+  padding-right: 0;
+  padding-left: 0; 
 }
 
 // Content Main
 .content-main { 
-  padding-bottom: 2em; 
+  padding-bottom: 0;
+  &:first-of-type section {
+    padding-top: 0; 
+  } 
 }
 
 // Sidebar Main
@@ -39,54 +40,38 @@
 }
 
 // Two Col Layout
-
-.two-col {
-  padding-bottom: 0;  
+  
+// 800
+@media (min-width: $break-800) {
   .page-content {
-    padding-top: 1.5em; 
-    padding-right: 0;
-    padding-left: 0;  
+    display: flex;
+    flex-flow: row wrap;
+    padding-top: 2.5em; 
+    padding-right: 1.5em; 
   }
   .content-main {
-    padding-bottom: 0;
-    &:first-of-type section {
-      padding-top: 0; 
-    }  
-  }   
-  .sidebar-main {      
-     
+    //flex-grow: 1;
+    flex: 1 0 70%;
+    padding-right: 0;
+    //width: 70%;
   }
-  
-  // 800
-  @media (min-width: $break-800) {
-    .page-content {
-      display: flex;
-      flex-flow: row wrap;
-      padding-top: 2.5em; 
-      padding-right: 1.5em; 
-    }
-    .content-main {
-      flex-grow: 1;
-      padding-right: 0;
-      width: 70%;
-    }
-    .sidebar-main {
-      flex-grow: 1; 
-      width: 30%;
-      // use this when a bg is defined
-      //& > section {
-        //padding-top: 1em;
-        //padding-bottom: 1em;   
-      //}
-      //section,
-      //div {
-        //& > .container,
-        //& >.content-post-wrap {
-          //padding-right: 0;
-          //padding-left: 0;
-        //}  
-      //}
-    }
+  .sidebar-main {
+    //flex-grow: 1;
+    flex: 1 0 30%; 
+    //width: 30%;
+    // use this when a bg is defined
+    //& > section {
+      //padding-top: 1em;
+      //padding-bottom: 1em;   
+    //}
+    //section,
+    //div {
+      //& > .container,
+      //& >.content-post-wrap {
+        //padding-right: 0;
+        //padding-left: 0;
+      //}  
+    //}
   }
 }
 

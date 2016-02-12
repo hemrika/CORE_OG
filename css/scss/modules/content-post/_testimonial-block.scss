@@ -5,7 +5,7 @@ $testimonial-bg: #EEE;
   display: flex;
   flex-flow: column;
   justify-content: center;
-  flex: 1;
+  flex-grow: 1;
   font-size: 1em;
   overflow-y: auto;
   margin-right: auto;
@@ -15,6 +15,7 @@ $testimonial-bg: #EEE;
   padding-right: 1.5em;
   padding-left: 1.5em;
   text-align: center;
+  width: 100%;  
   &:before {
     content: '300 450 540';
     display: none;

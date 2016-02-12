@@ -1,62 +1,80 @@
+// Contact Banner
+
 .contact-banner {
-	background-color: #DDD;
-	text-align: center;
-	a {
-
-	}	
-	.soc-media-links {
-  	padding-top: 0; 
-	}		
-}
-
-.contact-banner-item {
-	display: inline-block;
-	margin-bottom: 2.5em;			
-	width: 100%;
-	h2 {
-		font-size: 1.5em;
-		font-size: 1.5rem;
-		margin-bottom: 0.5em;		
-		span {
-			display: block;
-			font-size: 2em;
-			font-size: 2rem;	
-			margin-bottom: 0.25em;		
-		}	
+  padding-top: 1em;
+  padding-bottom: 1em;
+  text-align: center;
+  width: 100%;    
+  .contact-info {
+    @include container;
+    padding-bottom: 0;
+    .site-footer & {
+      padding-right: 0;
+      padding-left: 0;  
+    }   
+  }
+  address {
+    line-height: 1.5;
+    h2 {
+      padding-top: 0; 
+    }   
+  }
+  .soc-media-icons {
+    position: relative;
+    bottom: auto;
+    padding-top: 0;   
+    padding-bottom: 0;
+  } 
+  // 600
+  @media (min-width: 600px) {
+    .contact-info {
+      display: flex;
+      align-items: center;  
+      width: 100%;
+      address {
+        padding-bottom: 0;  
+      }  
+    }
+    address {
+      flex: 1 0 auto;;
+      text-align: left;    
+    }
+    .soc-media-icons {
+      flex: 0 1 auto;
+      justify-content: flex-end; 
+    }
+  }
+  // 2000
+	@media (min-width: $break-xxl-screen) {
+  	padding-top: 1.25em;
+  	padding-bottom: 1.25em; 
 	}
-	&:last-child {
-		margin-bottom: 0;	
+	
+	// fallbacks
+	
+	.no-flexbox & {
+  	address,
+  	.soc-media-icons {
+    	text-align: center; 
+    	width: 100%;  
+  	}
+  	// 768
+  	@media (min-width: $break-lg-phone) {
+    	address,
+    	.soc-media-icons {
+      	text-align: left; 
+      	width: auto;    
+    	}
+    	address {
+      	float: left;
+      	width: auto;   
+    	}
+    	.soc-media-icons {
+      	float: right;
+      	padding-top: 16px;  
+      	width: auto;   
+    	}
+  	}
 	}
-	// 480
-	@media (min-width: $break-sm-phone) {
-		padding-right: 0.875em;
-		padding-left: 0.875em;
-	}
-	// 667
-	@media (min-width: $break-ml-phone) {
-		width: 33.33333333%;	
-	}
-	// 900
-	@media (min-width: 900px) {
-		padding-top: 1em;	
-		h2 {
-			margin-bottom: 1em;
-			width: 100%;		
-			span {
-				display: inline;
-				font-size: 1em;
-				font-size: 1rem;
-				padding-right: 0.25em;
-				&.icon-phone-circled {
-					font-size: 0.8em;
-					padding-left: 1.1em;		
-				}			
-			}
-		}
-		address,
-		ul {
-			text-align: left;
-			padding-left: 6em;	
-		}	
-	}
+	 
 }

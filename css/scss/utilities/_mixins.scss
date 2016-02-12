@@ -468,6 +468,7 @@
 @mixin no-flexbox-container {
   .no-flexbox & {
     display: block;
+    @include clearfix;
     & > * {
       display: inline-block;     
     }  

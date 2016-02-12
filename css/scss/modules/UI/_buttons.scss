@@ -1,7 +1,9 @@
+
 @mixin button {
-  background: none;
+  background-color: transparent;
+  color: currentColor;
 	border-radius: 3px;
-	//border: none;
+	//border: 2px solid currentColor;
 	display: inline-block;
 	font-weight: 600; 	
 	letter-spacing: -0.02em; 		
@@ -397,4 +399,22 @@ button[class*="btn"] {
 		text-shadow: none;
 		//transform: rotateY(180deg) scale(1.1);
 	}		
+}
+
+.ContentBody .button-group [class*="btn"] {
+  &.circles,
+  &.rounded,
+  &.reset {
+    margin-bottom: 0;
+    width: auto;   
+  }
+  
+  &.circled {
+  }
+  &.rounded {
+  }
+  &.reset {
+    background: #CCC;
+    color: #555;
+  }
 }

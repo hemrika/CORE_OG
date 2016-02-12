@@ -1,32 +1,46 @@
 .soc-media-icons {
 	align-self: center;
 	display: flex;
-	flex-wrap: nowrap;
-	justify-content: flex-start;
+	flex-flow: row wrap;
+	justify-content: center;
+	margin-right: auto;
+	margin-left: auto;   
+	max-width: 150px;   
+  a {
+    flex: 0 1 auto;
+  }
 	p {
   	flex: 1 0 100%;
   	margin-bottom: 0.5em; 
 	}
-	a[class*="icon"] {
-		font-size: 1.125em;	
-		margin-right: 0.25em;	
-		&:before {
-			margin: 0;	
-		}		
-	}
-	// 480
-	@media (min-width: $break-sm-phone) {
-		a[class*="icon"] {
-			font-size: 1.45em;
-			margin-right: 0.125em;			
-		}
-	}
-	// 768
-	@media (min-width: $break-lg-phone) {
-		a[class*="icon"] {
-			font-size: 1.5em;		
-		}	
-	}
+	.icon {
+    height: 45px;
+    width: 45px;
+    margin: {
+      top: 5px;
+      right: 5px;
+      bottom: 5px;
+      left: 5px;
+    }   
+  }
+  
+  // 320
+  @media (min-width: $break-tiny-phone) {
+    max-width: 100%;  
+  }
+  // 480
+  @media (min-width: $break-tiny-phone) {
+    .icon {
+      margin-top: 0;
+      margin-bottom: 0; 
+    }
+    
+  }
+  
+  // fallbacks
+  .no-flexbox & {
+    display: inline-block;    
+  }
 }
 
 // Social Media Links
@@ -38,26 +52,11 @@
   width: 100%;
   a {
     font-size: 2em;
-    line-height: 1em; 
-    [class*="icon"] {
-      &:before {
-        margin-left: 0; 
-      }
-    } 
+    line-height: 1em;  
   }  
   p {     
     margin-bottom: 0.25em; 
     width: 100%;     
-  }
-  .post-list-item & a {
-    margin-left: 0.75em; 
-    width: auto;
-    i {
-      &:before {
-        font-size: 1.75em;
-        width: auto;   
-      }
-    }  
   }
   // 320
   @media (min-width: $break-tiny-phone) {

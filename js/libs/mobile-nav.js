@@ -6,8 +6,8 @@ var navigation = responsiveNav(".nav-collapse", {
   customToggle: "",                 // Selector: Specify the ID of a custom toggle
   enableFocus: true,
 	enableDropdown: true,
-	openDropdown: '<span class="screen-reader-text">Open sub menu</span>',
-	closeDropdown: '<span class="screen-reader-text">Close sub menu</span>',
+	openDropdown: '<span class="sr-text">Open sub menu</span>',
+	closeDropdown: '<span class="sr-text">Close sub menu</span>',
   closeOnNavClick: true,            // Boolean: Close the navigation when one of the links are clicked
   openPos: "relative",              // String: Position of the opened nav, relative or static
   navClass: "nav-collapse",         // String: Default CSS class. If changed, you need to edit the CSS too!
