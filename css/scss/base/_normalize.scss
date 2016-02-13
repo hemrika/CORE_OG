@@ -119,8 +119,6 @@ a:hover {
 }
 
 // Text-level semantics
-   
-
 
 // Address inconsistent styling of `abbr[title]`.
 // 1. Correct styling in Firefox 39 and Opera 12.
@@ -375,6 +373,7 @@ input[type="email"],
 input[type="tel"],
 textarea {
   color: inherit;
+  -webkit-box-shadow: none;
   -webkit-appearance: none;
   &:focus,
   &:active {
@@ -407,6 +406,7 @@ input[type="number"]::-webkit-outer-spin-button {
 
 // Address `appearance` set to `searchfield` in Safari and Chrome.
 
+input[type="text"],
 input[type="search"] {
 	-webkit-border-radius: 0;
   -webkit-appearance: textfield;
