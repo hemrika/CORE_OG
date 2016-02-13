@@ -1,9 +1,3 @@
-.mask-16x9 {
-  max-height: 200px;
-  overflow: hidden; }
-  .mask-16x9 img {
-    margin-top: -15%; }
-
 .demo-wrap {
   background: white;
   margin: 0 auto;
