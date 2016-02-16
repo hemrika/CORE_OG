@@ -44,6 +44,7 @@
   .js-nav .nav-collapse.multiple-level-nav.opened.dropdown-active {
     max-height: 9999px !important;
   }
+  
 
   .js-nav .nav-collapse.multiple-level-nav .sub-menu {
     clip: rect(0 0 0 0);
@@ -69,36 +70,34 @@
   .dropdown-toggle {
     background-color: transparent;
     content: "";
-    font-family: $font-icon;
+    //font-family: $font-icon;
     height: 48px;
     width: 48px;
     padding: 0;
     position: absolute;
     margin: 0;
     text-transform: lowercase;
-    transition: background 0.4s ease;
+    transition: background .4s ease;
     top: 0;
     right: 0;
     z-index: 1002;
+    .icon {
+      height: 30px;
+      width: 30px;  
+      margin-right: 0;
+      margin-left: 0;
+      top: 0;
+      left: 0.125em; 
+      pointer-events: none;  
+    }
     &:hover,
     &:focus,
     &:active {
       
-    }  
-    &:after {
-      content: "+";
-      content: '\e805';    
-      font-size: 20px;
-      line-height: 1.2; 
     }
     &.toggled  {
-      
-      &:after {
-        content: "-";
-        content: '\e804';
-        // ** theme ** // color: darkRed;
-        font-size: 20px;
-        line-height: 1.2; 
+      .icon {
+        transform: rotate(45deg);
       }
     }
   }
@@ -244,10 +243,10 @@
 .nav-toggle.active {
   width: 100%;    
   &:before {
-  	content: '\e804';
-  	font-size: 1.5em;
-  	font-family: $font-icon;
-  	font-weight: 500;  
+  	content: 'close';
+  	//font-size: 1.5em;
+  	//font-family: $font-icon;
+  	//font-weight: 500;  
     line-height: 40px;
     height: 40px; 		
     text-shadow: none;

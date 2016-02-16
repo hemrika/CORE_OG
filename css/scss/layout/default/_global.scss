@@ -45,7 +45,10 @@ section.bg-repeat {
     flex-flow: column;
     justify-content: center;
     padding-top: .75em;
-    padding-bottom: .75em; 
+    padding-bottom: .75em;
+    &:empty {
+      display: none;  
+    } 
   }
  
   

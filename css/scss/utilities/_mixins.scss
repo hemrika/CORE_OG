@@ -320,16 +320,6 @@
 	overflow: hidden;	
 }
 
-// 16:9 mask
-
-@mixin wide-mask {
-  max-height: 200px;
-  overflow: hidden;
-  img {
-    margin-top: -15%; 
-  } 
-}
-
 // Image Replacement "hack"
 
 @mixin hide-button-text {
