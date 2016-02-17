@@ -2,7 +2,7 @@
 
 .site-header {
   text-align: center;
-  
+  width: 100%;  
   .soc-media-icons {  
     padding-right: 10px; 
     a {
@@ -134,7 +134,7 @@
   
   .site-header {    
     [class*="-zone"] {
-      justify-content: space-between;
+     
     }
     .soc-media-icons {
       float: right;
