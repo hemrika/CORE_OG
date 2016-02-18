@@ -19,10 +19,14 @@ html::-webkit-scrollbar-thumb {
   height: 100px;  
 }
 
-html,
+html {
+  height: 100%; 
+}
 body,
 body > form {
-  //height: 100%; 
+  &.IE10 {
+    height: 100%;
+  } 
 }
 
 // Container - use .container in markup or use the "@include container;" mixin to wrap content or sections
