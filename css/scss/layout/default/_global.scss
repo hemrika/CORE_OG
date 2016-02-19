@@ -20,7 +20,9 @@ html::-webkit-scrollbar-thumb {
 }
 
 html {
-  height: 100%; 
+  &.no-flexbox {
+    height: 100%;
+  } 
 }
 body,
 body > form {

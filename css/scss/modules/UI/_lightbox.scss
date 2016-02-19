@@ -41,7 +41,7 @@
   height: 30px;
   padding: 0;
   display: block;
-  background: url("../images/venobox/close.svg") no-repeat;
+  background: url("http://cdn.kyamedia.com/images/venobox/close.svg") no-repeat;
   background-position: center top;
   color: #fff;
   text-indent: -100px;
@@ -79,7 +79,7 @@
   left: 50%;
   margin-left: -70px; 
   //border-width: 0 30px 0 10px;
-  background: url("../images/venobox/prev-blocky.svg") center center no-repeat;
+  background: url("http://cdn.kyamedia.com/images/venobox/prev-blocky.svg") center center no-repeat;
   // 667
   @media (min-width: $break-ml-phone) {
     left: 10px;
@@ -94,7 +94,7 @@
   right: 50%;
   margin-right: -70px;  
   //border-width: 0 10px 0 30px;
-  background: url("../images/venobox/next-blocky.svg") center center no-repeat;
+  background: url("http://cdn.kyamedia.com/images/venobox/next-blocky.svg") center center no-repeat;
   // 667
   @media (min-width: $break-ml-phone) {
     right: 10px;

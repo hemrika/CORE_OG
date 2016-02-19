@@ -16,6 +16,7 @@
     }
   }
   
+  
   // < 320
   @media (max-width: $break-sm-phone) {
     .container {
@@ -33,6 +34,29 @@
   } 
 }
 
+// Header Zones
+
+.header-zone {
+  
+  & > .container {
+    align-items: center;
+    flex-flow: row wrap;
+  }
+  
+  &:nth-child(2) > .container {
+    justify-content: space-between;
+    padding-top: 0;  
+  }
+  
+  // < 320
+  @media (max-width: $break-md-phone) {
+    &:nth-child(1) > .container {
+      padding-top: 0; 
+    }
+  }
+  
+}
+
 // hide icons on really small screens
 .site-header,
 .no-flexbox .site-header {  
@@ -42,21 +66,6 @@
       display: none;  
     }
   }
-}
-
-
-// Header Navbar
-
-.header-navbar {  
-	padding-top: .5em;
-	padding-bottom: .875em;	
-	.container {
-  	@include clearfix;
-		padding-right: .5em;
-		padding-left: .5em;  
-		position: relative;
-		width: 100%;
-	}
 }
 
 // nav menu
@@ -71,9 +80,9 @@
 
 // Header Nav
 
-.header-nav {  
+.header-nav {   
   text-align: center;   
-  width: 100%;  
+  width: 100%;
    a {
     padding: {
       top: 0;
@@ -90,24 +99,11 @@
   }
 }
 
-
 // 320
 @media (min-width: $break-tiny-phone) {
   
   .site-header {
     
-    // inside Site Header
-    [class*="-zone"] .container {
-      align-items: center;
-      flex-flow: row wrap;
-      justify-content: center;
-    }
-    [class*="-zone"] {
-      &:last-of-type .container {
-        justify-content: space-between;
-        padding-top: 0; 
-      }
-    }
     .soc-media-icons {  
       float: left;
       flex: 0 1 auto;
@@ -126,16 +122,19 @@
       order: 3; 
       width: 65%; 
     }
-  } 
+  }
+  
+  .header-nav {
+    font-size: 0.875em;
+  }
+   
 }
 
 // 540
 @media (min-width: $break-md-phone) {
   
   .site-header {    
-    [class*="-zone"] {
-     
-    }
+
     .soc-media-icons {
       float: right;
       padding-right: .5em;   
@@ -158,8 +157,7 @@
       padding-right: 1em;  
       padding-left: 0;  
     }
-    .icon {
-      margin-right: 0;  
+    .icon {  
       margin-left: 0; 
     }   
   }
@@ -214,7 +212,6 @@
   @media (min-width: $break-md-phone) {
     
     .header-nav {
-      //padding-top: .938em;
     }
     
     .site-header {

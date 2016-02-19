@@ -46,7 +46,7 @@
 	}
 	
 	// 480
-	@media (min-width: $break-sm-phone) {
+	@media (min-width: $break-tiny-phone) {
 		max-width: 300px;
 		
 		input[type="text"],

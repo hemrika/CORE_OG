@@ -5,10 +5,15 @@
   padding-bottom: 0;       
 	position: relative;
 	z-index: 2;
+	width: 100%;  
 	.container,
 	nav {
   	display: inline-block;  
 		position: relative;     
+  }
+  // 800
+  @media (min-width: $break-800) {
+    width: auto;  
   }  
 }
 
