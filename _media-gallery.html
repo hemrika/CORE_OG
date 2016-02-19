@@ -23,7 +23,7 @@
   	</script>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>CORE :: Responsive Images DEMO</title>
+    <title>CORE :: Media Gallery</title>
     <meta name="description" content="Site description goes here.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -31,7 +31,7 @@
     <!--[if IEMobile]><meta http-equiv="cleartype" content="on" /><![endif]-->
     <link rel="apple-touch-icon" href="App_Themes/ThemeName/images/touch-icons/favicon-152.png">   		
     <!-- Core CSS -->   		
-    <link href="css/core.css" rel="stylesheet">
+    <link href="http://cdn.kyamedia.com/css/core.css" rel="stylesheet">
     <!-- Theme CSS -->   		
     <link href="App_Themes/ThemeName/theme.css" rel="stylesheet">
     <!-- Theme Color -->   		
@@ -471,6 +471,40 @@
 
     </svg>
     
+    <style>
+      .site-content {
+        margin-top: 100px;
+      }
+      
+      .demo-collapse {
+        background: #FFF;
+        box-shadow: 0 0 20px transparent;
+        padding: 1rem;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 101;
+        -webkit-transition: all 0.4s ease;
+        transition: all 0.4s ease;
+      }
+      
+      
+      .sticky .demo-collapse {
+        box-shadow: 0 0 15px #777;
+      }
+       
+      .sticky .panel {
+        margin-bottom: 0;
+      }
+      
+      .panel-body {
+/*         border-right: none; */
+        max-height: 400px;
+      }
+      
+    </style>
+    
     <!-- SITE WRAP -->
 		<div class="site-wrap">		  					    
       <!-- *** Demo Container *** -->
@@ -497,12 +531,29 @@
                 <h4>Media Gallery</h4>
                 <p>Our gallery is based on the <span class="pre inline">.media-posts</span> module. By default we use <strong>flexbox</strong> to achieve the layout with emphasis on the newest post and offers an alternative grid look. If a more traditional layout is preferred, consider adding the <span class="pre inline">.compact</span> modifier class or edit the CSS.</p>
                 <h4>Media Gallery Compact</h4>
-                <p>This gallery is available and recommended if <strong><em>more than</em> 16</strong> items are needed to display. We recommend using just <span class="pre inline">.media-gallery</span> if you have <strong><em>less than</em> 6</strong> items to display. These posts can also be sorted with Kentico's pager functionality that could help optimize the amount of items showing per page as well as the amount of pages total.</p>
+                <p>This gallery is available and recommended if <strong><em>more than</em> 16</strong> items are needed to display. We recommend using just <span class="pre inline">.media-gallery</span> if you have <strong><em>less than</em> 6</strong> items to display. These posts can also be sorted with Kentico's pager functionality that could help optimize the amount of items showing per page as well as the amount of pages total.</p><br>
+                <p><strong>initialize w/ jQuery</strong></p>
+               <pre>
+<code>
+<span class="code-comment">// lightbox</span>
+<span class="jq-action">$</span>(<span class="jq-selector">'.venobox'</span>).<span class="jq-action">venobox</span>({
+  <span class="code-comment">// current options</span>
+  numeratio: <span class="jq-value">true</span>, <span class="code-comment">// default: false</span>
+  infinigall: <span class="jq-value">true</span>, <span class="code-comment">// default: false</span>
+
+  <span class="code-comment">// other options</span>
+  framewidth: <span class="jq-value">'400px'</span>,
+  frameheight: <span class="jq-value">'300px'</span>,
+  border: <span class="jq-value">'10px'</span>, <span class="code-comment">// default: '0'</span>
+  bgcolor: <span class="jq-value">'#5dff5e'</span>,
+  titleattr: <span class="jq-value">'data-title' <span class="code-comment">// default: 'title'</span></span>
+});
+</code>
+              </pre>
               </div>
             </div>
           </div>
         </div>
-        
         <!-- *** WEB PART CODE STARTS HERE *** -->
         
         
@@ -518,17 +569,27 @@
                 <!-- Image -->
                 <figure class="feature-label">
                   <a href="#">
-                  <img data-src="http://placehold.it/800x450/fd9595?text=800x450" alt="">
+                    <picture>                      
+                      <!-- MD -->
+                      <source data-srcset="http://cdn.kyamedia.com/images/content-img/16x9/img-16x9-MD.jpg"
+                              media="(min-width: 625px)" />
+                      
+                      <!-- SM -->
+                      <source data-srcset="http://cdn.kyamedia.com/images/content-img/16x9/img-16x9-SM.jpg" />
+                      
+                      <!-- Fallback -->
+                      <img data-srcset="http://cdn.kyamedia.com/images/content-img/16x9/img-16x9-MD.jpg" alt="Media Post">
+                    </picture>
                   </a>
                   <noscript>
                     <a href="#">
-                    <img src="http://placehold.it/800x450/fd9595?text=800x450" alt="">
+                      <img src="http://cdn.kyamedia.com/images/content-img/16x9/img-16x9-MD.jpg" alt="Media Post">
                     </a>
                   </noscript>
                   <!-- Media Caption -->
                   <figcaption class="media-caption">
                     <h1 class="media-title">Media Title</h1>
-                    <a class="svg-icon venobox vbox-item" data-gall="gall1" title="Media Gallery Image" href="images/gallery/gallery-test.jpg"><img src="images/UI/icon-arrow-rt-cir-thin.svg" alt="Media Post"><span class="sr-text">View Details</span></a>
+                    <a class="svg-icon venobox vbox-item" data-gall="gall1" title="Media Gallery Image" href="http://cdn.kyamedia.com/images/gallery/gallery-test.jpg"><img src="http://cdn.kyamedia.com/images/UI/icon-arrow-rt-cir-thin.svg" alt="Media Post"><span class="sr-text">View Details</span></a>
                   </figcaption>
                 </figure>
               </div>
@@ -537,17 +598,27 @@
                 <!-- Image -->
                 <figure>
                   <a href="#">
-                  <img data-src="http://placehold.it/1200x675/debffb?text=1200x675" alt="">
+                    <picture>                      
+                      <!-- MD -->
+                      <source data-srcset="http://cdn.kyamedia.com/images/content-img/16x9/img-video-thumb-MD.jpg"
+                              media="(min-width: 625px)" />
+                      
+                      <!-- SM -->
+                      <source data-srcset="http://cdn.kyamedia.com/images/content-img/16x9/img-video-thumb-SM.jpg" />
+                      
+                      <!-- Fallback -->
+                      <img data-srcset="http://cdn.kyamedia.com/images/content-img/16x9/img-video-thumb-MD.jpg" alt="Video Media Post">
+                    </picture>
                   </a>
                   <noscript>
                     <a href="#">
-                    <img src="http://placehold.it/1200x675/debffb?text=1200x675" alt="">
+                      <img src="http://cdn.kyamedia.com/images/content-img/16x9/img-16x9-MD.jpg" alt="Video Media Post">
                     </a>
                   </noscript>
                   <!-- Media Caption -->
                   <figcaption class="media-caption">
-                    <h1 class="media-title">Media Title</h1>
-                    <a class="svg-icon venobox vbox-item" data-gall="gall1" title="Media Gallery Image" href="images/content-img/img-Pick-Design-MD.png"><img src="images/UI/icon-arrow-rt-cir-thin.svg" alt="Media Post"><span class="sr-text">View Details</span></a>
+                    <h1 class="media-title">Video Title</h1>
+                    <a class="svg-icon venobox vbox-item" data-gall="gall1" data-type="youtube" data-autoplay="true" title="Media Gallery Video" href="https://www.youtube.com/embed/ElAJbhkH2lU?rel=0"><img src="http://cdn.kyamedia.com/images/UI/icon-arrow-rt-cir-thin.svg" alt="Video Media Post"><span class="sr-text">View Details</span></a>
                   </figcaption>
                 </figure>
               </div>
@@ -556,36 +627,27 @@
                 <!-- Image -->
                 <figure>
                   <a href="#">
-                  <img data-src="http://placehold.it/2000x1125/CCCCCC?text=VIDEO" alt="">
+                    <picture>                      
+                      <!-- MD -->
+                      <source data-srcset="http://cdn.kyamedia.com/images/content-img/16x9/img-16x9-MD.jpg"
+                              media="(min-width: 625px)" />
+                      
+                      <!-- SM -->
+                      <source data-srcset="http://cdn.kyamedia.com/images/content-img/16x9/img-16x9-SM.jpg" />
+                      
+                      <!-- Fallback -->
+                      <img data-srcset="http://cdn.kyamedia.com/images/content-img/16x9/img-16x9-MD.jpg" alt="Media Post">
+                    </picture>
                   </a>
                   <noscript>
                     <a href="#">
-                    <img src="http://placehold.it/2000x1125/CCCCCC?text=VIDEO" alt="">
+                      <img src="http://cdn.kyamedia.com/images/content-img/16x9/img-16x9-MD.jpg" alt="Media Post">
                     </a>
                   </noscript>
                   <!-- Media Caption -->
                   <figcaption class="media-caption">
                     <h1 class="media-title">Media Title</h1>
-                    <a class="svg-icon venobox vbox-item" data-gall="gall1" data-type="youtube" data-autoplay="true" title="Media Gallery Video" href="https://www.youtube.com/embed/ElAJbhkH2lU?rel=0"><img src="images/UI/icon-arrow-rt-cir-thin.svg" alt="Media Post"><span class="sr-text">View Details</span></a>
-                  </figcaption>
-                </figure>
-              </div>
-              <!-- Media Item -->
-              <div class="cq media-item">
-                <!-- Image -->
-                <figure class="feature-label">
-                  <a href="#">
-                  <img data-src="http://placehold.it/2500x1407/a1ebfd?text=2500x1407" alt="">
-                  </a>
-                  <noscript>
-                    <a href="#">
-                    <img src="http://placehold.it/2500x1407/a1ebfd?text=2500x1407" alt="">
-                    </a>
-                  </noscript>
-                  <!-- Media Caption -->
-                  <figcaption class="media-caption">
-                    <h1 class="media-title">Media Title</h1>
-                    <a class="svg-icon venobox vbox-item" data-gall="gall1" title="Media Gallery Image" href="http://placehold.it/1000x750/CCCCCC?text=1000x750"><img src="images/UI/icon-arrow-rt-cir-thin.svg" alt="Media Post"><span class="sr-text">View Details</span></a>
+                    <a class="svg-icon venobox vbox-item" data-gall="gall1" title="Media Gallery Image" href="http://cdn.kyamedia.com/images/content-img/img-Pick-Design-MD.png"><img src="http://cdn.kyamedia.com/images/UI/icon-arrow-rt-cir-thin.svg" alt="Media Post"><span class="sr-text">View Details</span></a>
                   </figcaption>
                 </figure>
               </div>
@@ -594,17 +656,56 @@
                 <!-- Image -->
                 <figure>
                   <a href="#">
-                  <img data-src="http://placehold.it/3000x1688/f2c5b0?text=3000x1688" alt="">
+                    <picture>                      
+                      <!-- MD -->
+                      <source data-srcset="http://cdn.kyamedia.com/images/content-img/16x9/img-16x9-MD.jpg"
+                              media="(min-width: 625px)" />
+                      
+                      <!-- SM -->
+                      <source data-srcset="http://cdn.kyamedia.com/images/content-img/16x9/img-16x9-SM.jpg" />
+                      
+                      <!-- Fallback -->
+                      <img data-srcset="http://cdn.kyamedia.com/images/content-img/16x9/img-16x9-MD.jpg" alt="Media Post">
+                    </picture>
                   </a>
                   <noscript>
                     <a href="#">
-                    <img src="http://placehold.it/3000x1688/f2c5b0?text=3000x1688" alt="">
+                      <img src="http://cdn.kyamedia.com/images/content-img/16x9/img-16x9-MD.jpg" alt="Media Post">
                     </a>
                   </noscript>
                   <!-- Media Caption -->
                   <figcaption class="media-caption">
                     <h1 class="media-title">Media Title</h1>
-                    <a class="svg-icon venobox vbox-item" data-gall="gall1" title="Media Gallery Image" href="http://placehold.it/600x600/CCCCCC?text=600x600"><img src="images/UI/icon-arrow-rt-cir-thin.svg" alt="Media Post"><span class="sr-text">View Details</span></a>
+                    <a class="svg-icon venobox vbox-item" data-gall="gall1" title="Media Gallery Image" href="http://cdn.kyamedia.com/images/content-img/banner/banner-alt/img-banner-alt-MD.jpg"><img src="http://cdn.kyamedia.com/images/UI/icon-arrow-rt-cir-thin.svg" alt="Media Post"><span class="sr-text">View Details</span></a>
+                  </figcaption>
+                </figure>
+              </div>
+              <!-- Media Item -->
+              <div class="cq media-item">
+                <!-- Image -->
+                <figure>
+                  <a href="#">
+                    <picture>                      
+                      <!-- MD -->
+                      <source data-srcset="http://cdn.kyamedia.com/images/content-img/16x9/img-16x9-MD.jpg"
+                              media="(min-width: 625px)" />
+                      
+                      <!-- SM -->
+                      <source data-srcset="http://cdn.kyamedia.com/images/content-img/16x9/img-16x9-SM.jpg" />
+                      
+                      <!-- Fallback -->
+                      <img data-srcset="http://cdn.kyamedia.com/images/content-img/16x9/img-16x9-MD.jpg" alt="Media Post">
+                    </picture>
+                  </a>
+                  <noscript>
+                    <a href="#">
+                      <img src="http://cdn.kyamedia.com/images/content-img/16x9/img-16x9-MD.jpg" alt="Media Post">
+                    </a>
+                  </noscript>
+                  <!-- Media Caption -->
+                  <figcaption class="media-caption">
+                    <h1 class="media-title">Media Title</h1>
+                    <a class="svg-icon venobox vbox-item" data-gall="gall1" title="Media Gallery Image" href="http://cdn.kyamedia.com/images/content-img/img-srcset-3000px.jpg"><img src="http://cdn.kyamedia.com/images/UI/icon-arrow-rt-cir-thin.svg" alt="Media Post"><span class="sr-text">View Details</span></a>
                   </figcaption>
                 </figure>
               </div>
@@ -622,19 +723,29 @@
               <!-- Media Item -->
               <div class="cq media-item">
                 <!-- Image -->
-                <figure>
+                <figure class="feature-label">
+                <a href="#">
+                  <picture>                    
+                    <!-- MD -->
+                    <source data-srcset="http://cdn.kyamedia.com/images/content-img/3x2/img-3x2-MD.jpg"
+                            media="(min-width: 500px)" />
+                    
+                    <!-- SM -->
+                    <source data-srcset="http://cdn.kyamedia.com/images/content-img/3x2/img-3x2-SM.jpg" />
+                    
+                    <!-- Fallback -->
+                    <img data-srcset="http://cdn.kyamedia.com/images/content-img/3x2/img-3x2-MD.jpg" alt="Media Post">
+                  </picture>
+                </a>
+                <noscript>
                   <a href="#">
-                    <img data-src="http://placehold.it/480x270/c8d4e9?text=480x270" alt="">
+                    <img src="http://cdn.kyamedia.com/images/content-img/3x2/img-3x2-MD.jpg" alt="Media Post">
                   </a>
-                  <noscript>
-                    <a href="#">
-                      <img src="http://placehold.it/480x270/c8d4e9?text=480x270" alt="">
-                    </a>
-                  </noscript>
+                </noscript>
                   <!-- Media Caption -->
                   <figcaption class="media-caption">
                     <h1 class="media-title">Media Title</h1>
-                    <a class="svg-icon venobox vbox-item" data-gall="gall2" title="Media Gallery Image" href="http://placehold.it/1000x750/CCCCCC?text=1000x750"><img src="images/UI/icon-arrow-rt-cir-thin.svg" alt="Media Post"><span class="sr-text">View Details</span></a>
+                    <a class="svg-icon venobox vbox-item" data-gall="gall2" title="Media Gallery Image" href="http://cdn.kyamedia.com/images/gallery/gallery-test.jpg"><img src="http://cdn.kyamedia.com/images/UI/icon-arrow-rt-cir-thin.svg" alt="Media Post"><span class="sr-text">View Details</span></a>
                   </figcaption>
                 </figure>
               </div>
@@ -643,17 +754,27 @@
                 <!-- Image -->
                 <figure>
                   <a href="#">
-                    <img data-src="http://placehold.it/800x450/fd9595?text=800x450" alt="">
+                    <picture>                      
+                      <!-- MD -->
+                      <source data-srcset="http://cdn.kyamedia.com/images/content-img/3x2/img-video-thumb-MD.jpg"
+                              media="(min-width: 500px)" />
+                      
+                      <!-- SM -->
+                      <source data-srcset="http://cdn.kyamedia.com/images/content-img/3x2/img-video-thumb-SM.jpg" />
+                      
+                      <!-- Fallback -->
+                      <img data-srcset="http://cdn.kyamedia.com/images/content-img/3x2/img-video-thumb-MD.jpg" alt="Media Post">
+                    </picture>
                   </a>
                   <noscript>
                     <a href="#">
-                      <img src="http://placehold.it/800x450/fd9595?text=800x450" alt="">
+                      <img src="http://cdn.kyamedia.com/images/content-img/3x2/img-video-thumb-MD.jpg" alt="Media Post">
                     </a>
                   </noscript>
                   <!-- Media Caption -->
                   <figcaption class="media-caption">
-                    <h1 class="media-title">Media Title</h1>
-                    <a class="svg-icon venobox vbox-item" data-gall="gall2" title="Media Gallery Image" href="http://placehold.it/1400x788/CCCCCC?text=1400x788"><img src="images/UI/icon-arrow-rt-cir-thin.svg" alt="Media Post"><span class="sr-text">View Details</span></a>
+                    <h1 class="media-title">Video Title</h1>
+                    <a class="svg-icon venobox vbox-item" data-gall="gall2" data-type="youtube" data-autoplay="false" title="Media Gallery Video" href="https://www.youtube.com/embed/ElAJbhkH2lU?rel=0"><img src="http://cdn.kyamedia.com/images/UI/icon-arrow-rt-cir-thin.svg" alt="Video Media Post"><span class="sr-text">View Details</span></a>
                   </figcaption>
                 </figure>
               </div>
@@ -661,18 +782,28 @@
               <div class="cq media-item">
                 <!-- Image -->
                 <figure>
+                <a href="#">
+                  <picture>                    
+                    <!-- MD -->
+                    <source data-srcset="http://cdn.kyamedia.com/images/content-img/3x2/img-3x2-MD.jpg"
+                            media="(min-width: 500px)" />
+                    
+                    <!-- SM -->
+                    <source data-srcset="http://cdn.kyamedia.com/images/content-img/3x2/img-3x2-SM.jpg" />
+                    
+                    <!-- Fallback -->
+                    <img data-srcset="http://cdn.kyamedia.com/images/content-img/3x2/img-3x2-MD.jpg" alt="Media Post">
+                  </picture>
+                </a>
+                <noscript>
                   <a href="#">
-                    <img data-src="http://placehold.it/1200x675/debffb?text=1200x675" alt="">
+                    <img src="http://cdn.kyamedia.com/images/content-img/3x2/img-3x2-MD.jpg" alt="Media Post">
                   </a>
-                  <noscript>
-                    <a href="#">
-                      <img src="http://placehold.it/1200x675/debffb?text=1200x675" alt="">
-                    </a>
-                  </noscript>
+                </noscript>
                   <!-- Media Caption -->
                   <figcaption class="media-caption">
                     <h1 class="media-title">Media Title</h1>
-                    <a class="svg-icon venobox vbox-item" data-gall="gall2" title="Media Gallery Image" href="images/content-img/img-avatar-Gandhi.jpg"><img src="images/UI/icon-arrow-rt-cir-thin.svg" alt="Media Post"><span class="sr-text">View Details</span></a>
+                    <a class="svg-icon venobox vbox-item" data-gall="gall2" title="Media Gallery Image" href="http://cdn.kyamedia.com/images/demo/atomic-gif-3.gif"><img src="http://cdn.kyamedia.com/images/UI/icon-arrow-rt-cir-thin.svg" alt="Media Post"><span class="sr-text">View Details</span></a>
                   </figcaption>
                 </figure>
               </div>
@@ -680,18 +811,28 @@
               <div class="cq media-item">
                 <!-- Image -->
                 <figure>
+                <a href="#">
+                  <picture>                    
+                    <!-- MD -->
+                    <source data-srcset="http://cdn.kyamedia.com/images/content-img/3x2/img-3x2-MD.jpg"
+                            media="(min-width: 500px)" />
+                    
+                    <!-- SM -->
+                    <source data-srcset="http://cdn.kyamedia.com/images/content-img/3x2/img-3x2-SM.jpg" />
+                    
+                    <!-- Fallback -->
+                    <img data-srcset="http://cdn.kyamedia.com/images/content-img/3x2/img-3x2-MD.jpg" alt="Media Post">
+                  </picture>
+                </a>
+                <noscript>
                   <a href="#">
-                    <img data-src="http://placehold.it/2000x1125/a6e0ad?text=2000x1125" alt="">
+                    <img src="http://cdn.kyamedia.com/images/content-img/3x2/img-3x2-MD.jpg" alt="Media Post">
                   </a>
-                  <noscript>
-                    <a href="#">
-                      <img src="http://placehold.it/2000x1125/a6e0ad?text=2000x1125" alt="">
-                    </a>
-                  </noscript>
+                </noscript>
                   <!-- Media Caption -->
                   <figcaption class="media-caption">
                     <h1 class="media-title">Media Title</h1>
-                    <a class="svg-icon venobox vbox-item" data-gall="gall2" title="Media Gallery Image" href="http://placehold.it/600x600/CCCCCC?text=600x600"><img src="images/UI/icon-arrow-rt-cir-thin.svg" alt="Media Post"><span class="sr-text">View Details</span></a>
+                    <a class="svg-icon venobox vbox-item" data-gall="gall2" title="Media Gallery Image" href="http://cdn.kyamedia.com/images/content-img/img-srcset-800px.jpg"><img src="http://cdn.kyamedia.com/images/UI/icon-arrow-rt-cir-thin.svg" alt="Media Post"><span class="sr-text">View Details</span></a>
                   </figcaption>
                 </figure>
               </div>
@@ -699,18 +840,28 @@
               <div class="cq media-item">
                 <!-- Image -->
                 <figure>
+                <a href="#">
+                  <picture>                    
+                    <!-- MD -->
+                    <source data-srcset="http://cdn.kyamedia.com/images/content-img/3x2/img-3x2-MD.jpg"
+                            media="(min-width: 500px)" />
+                    
+                    <!-- SM -->
+                    <source data-srcset="http://cdn.kyamedia.com/images/content-img/3x2/img-3x2-SM.jpg" />
+                    
+                    <!-- Fallback -->
+                    <img data-srcset="http://cdn.kyamedia.com/images/content-img/3x2/img-3x2-MD.jpg" alt="Media Post">
+                  </picture>
+                </a>
+                <noscript>
                   <a href="#">
-                    <img data-src="http://placehold.it/1200x675/debffb?text=1200x675" alt="">
+                    <img src="http://cdn.kyamedia.com/images/content-img/3x2/img-3x2-MD.jpg" alt="Media Post">
                   </a>
-                  <noscript>
-                    <a href="#">
-                      <img src="http://placehold.it/1200x675/debffb?text=1200x675" alt="">
-                    </a>
-                  </noscript>
+                </noscript>
                   <!-- Media Caption -->
                   <figcaption class="media-caption">
                     <h1 class="media-title">Media Title</h1>
-                    <a class="svg-icon venobox vbox-item" data-gall="gall2" title="Media Gallery Image" href="images/content-img/img-avatar-Gandhi.jpg"><img src="images/UI/icon-arrow-rt-cir-thin.svg" alt="Media Post"><span class="sr-text">View Details</span></a>
+                    <a class="svg-icon venobox vbox-item" data-gall="gall2" title="Media Gallery Image" href="http://cdn.kyamedia.com/images/content-img/img-Pricing-UI-SM.png"><img src="http://cdn.kyamedia.com/images/UI/icon-arrow-rt-cir-thin.svg" alt="Media Post"><span class="sr-text">View Details</span></a>
                   </figcaption>
                 </figure>
               </div>
@@ -718,21 +869,89 @@
               <div class="cq media-item">
                 <!-- Image -->
                 <figure>
+                <a href="#">
+                  <picture>                    
+                    <!-- MD -->
+                    <source data-srcset="http://cdn.kyamedia.com/images/content-img/3x2/img-3x2-MD.jpg"
+                            media="(min-width: 500px)" />
+                    
+                    <!-- SM -->
+                    <source data-srcset="http://cdn.kyamedia.com/images/content-img/3x2/img-3x2-SM.jpg" />
+                    
+                    <!-- Fallback -->
+                    <img data-srcset="http://cdn.kyamedia.com/images/content-img/3x2/img-3x2-MD.jpg" alt="Media Post">
+                  </picture>
+                </a>
+                <noscript>
                   <a href="#">
-                    <img data-src="http://placehold.it/2000x1125/a6e0ad?text=2000x1125" alt="">
+                    <img src="http://cdn.kyamedia.com/images/content-img/3x2/img-3x2-MD.jpg" alt="Media Post">
                   </a>
-                  <noscript>
-                    <a href="#">
-                      <img src="http://placehold.it/2000x1125/a6e0ad?text=2000x1125" alt="">
-                    </a>
-                  </noscript>
+                </noscript>
                   <!-- Media Caption -->
                   <figcaption class="media-caption">
                     <h1 class="media-title">Media Title</h1>
-                    <a class="svg-icon venobox vbox-item" data-gall="gall2" title="Media Gallery Image" href="http://placehold.it/600x600/CCCCCC?text=600x600"><img src="images/UI/icon-arrow-rt-cir-thin.svg" alt="Media Post"><span class="sr-text">View Details</span></a>
+                    <a class="svg-icon venobox vbox-item" data-gall="gall2" title="Media Gallery Image" href="http://cdn.kyamedia.com/images/content-img/event-list-bg-alt.svg"><img src="http://cdn.kyamedia.com/images/UI/icon-arrow-rt-cir-thin.svg" alt="Media Post"><span class="sr-text">View Details</span></a>
                   </figcaption>
                 </figure>
-              </div>               
+              </div>
+              <!-- Media Item -->
+              <div class="cq media-item">
+                <!-- Image -->
+                <figure>
+                <a href="#">
+                  <picture>                    
+                    <!-- MD -->
+                    <source data-srcset="http://cdn.kyamedia.com/images/content-img/3x2/img-3x2-MD.jpg"
+                            media="(min-width: 500px)" />
+                    
+                    <!-- SM -->
+                    <source data-srcset="http://cdn.kyamedia.com/images/content-img/3x2/img-3x2-SM.jpg" />
+                    
+                    <!-- Fallback -->
+                    <img data-srcset="http://cdn.kyamedia.com/images/content-img/3x2/img-3x2-MD.jpg" alt="Media Post">
+                  </picture>
+                </a>
+                <noscript>
+                  <a href="#">
+                    <img src="http://cdn.kyamedia.com/images/content-img/3x2/img-3x2-MD.jpg" alt="Media Post">
+                  </a>
+                </noscript>
+                  <!-- Media Caption -->
+                  <figcaption class="media-caption">
+                    <h1 class="media-title">Media Title</h1>
+                    <a class="svg-icon venobox vbox-item" data-gall="gall2" title="Media Gallery Image" href="http://cdn.kyamedia.com/images/content-img/img-Publish-Site-MD.png"><img src="http://cdn.kyamedia.com/images/UI/icon-arrow-rt-cir-thin.svg" alt="Media Post"><span class="sr-text">View Details</span></a>
+                  </figcaption>
+                </figure>
+              </div>
+              <!-- Media Item -->
+              <div class="cq media-item">
+                <!-- Image -->
+                <figure>
+                <a href="#">
+                  <picture>                    
+                    <!-- MD -->
+                    <source data-srcset="http://cdn.kyamedia.com/images/content-img/3x2/img-3x2-MD.jpg"
+                            media="(min-width: 500px)" />
+                    
+                    <!-- SM -->
+                    <source data-srcset="http://cdn.kyamedia.com/images/content-img/3x2/img-3x2-SM.jpg" />
+                    
+                    <!-- Fallback -->
+                    <img data-srcset="http://cdn.kyamedia.com/images/content-img/3x2/img-3x2-MD.jpg" alt="Media Post">
+                  </picture>
+                </a>
+                <noscript>
+                  <a href="#">
+                    <img src="http://cdn.kyamedia.com/images/content-img/3x2/img-3x2-MD.jpg" alt="Media Post">
+                  </a>
+                </noscript>
+                  <!-- Media Caption -->
+                  <figcaption class="media-caption">
+                    <h1 class="media-title">Media Title</h1>
+                    <a class="svg-icon venobox vbox-item" data-gall="gall2" title="Media Gallery Image" href="http://cdn.kyamedia.com/images/content-img/banner/banner-alt/img-banner-alt-XL.jpg"><img src="http://cdn.kyamedia.com/images/UI/icon-arrow-rt-cir-thin.svg" alt="Media Post"><span class="sr-text">View Details</span></a>
+                  </figcaption>
+                </figure>
+              </div>            
               <!-- END / Media Posts-->
             </div>
           </div>
@@ -749,5 +968,18 @@
     <script src="http://cdn.kyamedia.com/js/min/core.min.js"></script>
     <!-- Theme Scripts -->
 		<script src="CMSScripts/Custom/ThemeName/theme.min.js"></script>
+		
+    <!-- DEMO SCRIPTS -->  
+    <script>
+      $(window).scroll(function() {
+        if ($(this).scrollTop() > 1){  
+          $('.site-wrap').addClass("sticky");
+        }
+        else{
+          $('.site-wrap').removeClass("sticky");
+        }
+      });
+    </script>
+		
   </body>
 </html>

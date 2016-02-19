@@ -1051,16 +1051,13 @@ $.get("images/icons/icon-sprite.svg", function(data) {
 	$('.UnselectedNext').toggleClass('UnselectedNext').addClass('unselected-next');
 	
 	$('.testy .pager-number-area > span').addClass('pager-numbers');
-	
-/*
-	$(".dropdown").click(function() {
-  	$(this).toggleClass("focus-nav");
-	});
-*/
   
 
   // Venobox lightbox
-  $('.venobox').venobox(); 
+  $('.venobox').venobox({
+      numeratio: true,            // default: false
+      infinigall: true            // default: false
+  }); 
   
   // custom lightbox
   $('.venobox_custom').venobox({

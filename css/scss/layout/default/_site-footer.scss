@@ -14,17 +14,12 @@
       padding-left: 0.25em; 
     }
   }
-  // 768
-  @media (min-width: $break-lg-phone) {
-    //padding-top: 2em;
-    //padding-bottom: 2em;  
-  }
 }
 
 // Footer Logo
 
 .footer-logo {
-  font-size: 2em;
+  font-size: 1.5em;
   img {
      
   } 
@@ -105,14 +100,6 @@
   }
 }
 
-.footer-icons {
-  margin-bottom: 1em; 
-  [class^="icon-"]:before, 
-	[class*=" icon-"]:before {
-		font-size: 2em;	 
- 	}		
-}
-
 .footer-copyright {
   display: block; 
   margin: 0 auto; 
@@ -190,15 +177,3 @@
   }
   
 }
-
-
-
-
-// These footers are currently using classes to demo the style.
-// ".site-footer-contact, .site-footer-posts, .site-footer-basic"
-
-/*
-@import "../footer/contact-footer";
-@import "../footer/content-post-footer";
-@import "../footer/basic-footer";
-*/

@@ -111,24 +111,22 @@
     padding-bottom: 0;  
   }
   
-/*
   // 667 ~ 1200
   @media (min-width: $break-ml-phone) and (max-width: $break-lg-screen) {      
     .two-col & { 
       .post-wrap {
-        flex-flow: column-reverse;
+        //flex-flow: column-reverse;
       }
       .post-content,
       .post-media {
-        width: 100%;  
+        //width: 100%;  
       }
       .post-content {
-        padding-top: 1.5em; 
-        padding-left: 0;  
+        //padding-top: 1.5em; 
+        //padding-left: 0;  
       }
     }
   }
-*/
   //  800 ~ 1200
   @media (min-width: $break-800) and (max-width: $break-lg-screen) {
     .two-col & {

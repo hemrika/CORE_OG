@@ -196,7 +196,13 @@
     width: 100%;    
   }
   .title-txt > pre {
-    line-height: 1.5; 
+    font-size: .875em;  
+    line-height: 1.75;
+    // 768
+    @media (min-width: $break-lg-phone) {
+      font-size: 1em;
+      line-height: 1.5; 
+    } 
   }
   // Panel Heading    
   .panel-heading {
