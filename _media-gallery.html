@@ -529,7 +529,7 @@
                <p>This is our gallery "lightbox" powered by <a href="http://lab.veno.it/venobox/" target="_blank">Venobox</a>. A light, responsive plugin used to display media inside a detailed view. You need to specify a thumbnail image and a link to a detailed image or video URL. Note that all the thumbnails <strong>MUST</strong> be cropped the at the same aspect ratio and and <em>should</em> be the same pixel size to avoid any distortion</p>
                 <p>What makes this lightbox different is that is allows for taller sized items to be viewed by scrolling instead of shrinking the content to match the viewport. This is especially great for previewing web site templates or items that are vertically longer than others. Click on the first item for an example of this detailed view.</p>
                 <h4>Media Gallery</h4>
-                <p>Our gallery is based on the <span class="pre inline">.media-posts</span> module. By default we use <strong>flexbox</strong> to achieve the layout with emphasis on the newest post and offers an alternative grid look. If a more traditional layout is preferred, consider adding the <span class="pre inline">.compact</span> modifier class or edit the CSS.</p>
+                <p>Our gallery is based on the <span class="pre inline">.media-posts</span> module. By default we use <strong>flexbox</strong> to achieve the layout with emphasis on the newest post and offers an alternative grid look. If a more traditional layout is preferred, consider adding the <span class="pre inline">.compact</span> modifier class like this: <span class="pre inline">.media-posts.compact</span></p>
                 <h4>Media Gallery Compact</h4>
                 <p>This gallery is available and recommended if <strong><em>more than</em> 16</strong> items are needed to display. We recommend using just <span class="pre inline">.media-gallery</span> if you have <strong><em>less than</em> 6</strong> items to display. These posts can also be sorted with Kentico's pager functionality that could help optimize the amount of items showing per page as well as the amount of pages total.</p><br>
                 <p><strong>initialize w/ jQuery</strong></p>
@@ -541,11 +541,11 @@
   numeratio: <span class="jq-value">true</span>, <span class="code-comment">// default: false</span>
   infinigall: <span class="jq-value">true</span>, <span class="code-comment">// default: false</span>
 
-  <span class="code-comment">// other options</span>
+  <span class="code-comment">// other options (not set)</span>
   framewidth: <span class="jq-value">'400px'</span>,
   frameheight: <span class="jq-value">'300px'</span>,
-  border: <span class="jq-value">'10px'</span>, <span class="code-comment">// default: '0'</span>
-  bgcolor: <span class="jq-value">'#5dff5e'</span>,
+  border: <span class="jq-value">'10px'</span>,
+  bgcolor: <span class="jq-value">'#555555'</span>,
   titleattr: <span class="jq-value">'data-title' <span class="code-comment">// default: 'title'</span></span>
 });
 </code>
@@ -714,12 +714,12 @@
         </section>
         
         <!-- MEDIA GALLERY COMPACT -->
-        <section class="media-gallery compact">
+        <section class="media-gallery">
           <div class="container">
             <h1 class="module-title">Media Gallery Compact</h1>
             <div class="module-description">This is used for the module description.</div>
             <!-- Media Posts -->
-            <div class="media-posts">
+            <div class="media-posts compact">
               <!-- Media Item -->
               <div class="cq media-item">
                 <!-- Image -->
